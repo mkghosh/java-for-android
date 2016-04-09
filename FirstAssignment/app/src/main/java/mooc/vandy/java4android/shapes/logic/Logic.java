@@ -187,5 +187,27 @@ public class Logic
         return 2 * (length + width);
     }
 
+    /**
+     * <h1>This method is used to calculate the Area of a Circle</h1>
+     * <p>This method takes the radius of the Circle and returns the area occupied by the Circle.</p>
+     * @param radius {@link Double} radius of the circle whose are is to be calculated.
+     * @return {@link Double} Area of the circle
+     */
+    @Contract(pure = true)
+    public static double circleArea(double radius) {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    /**
+     * <h1>This method is used to calculate the Circumference of a Circle</h1>
+     * <p>This method takes the radius of the Circle and returns the Circumference of the Circle.</p>
+     * @param radius {@link Double} radius of the circle.
+     * @return {@link Double} Circumference of the circle
+     */
+    @Contract(pure = true)
+    public static double circleCircumference(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
 
 }
