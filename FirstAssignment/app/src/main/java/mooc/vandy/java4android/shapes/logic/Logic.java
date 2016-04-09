@@ -162,4 +162,124 @@ public class Logic
 
     // TODO -- add your code here
 
+    /**
+     * <h1>This method is used to determine the area of a rectangle.</h1>
+     * <p>This method will take two parameters the first one is the length of the rectangle</p>
+     * <p> and second one is the width of the rectangle.</p>
+     * @param length {@link Double} length of the rectangle whose area to be calculated.
+     * @param width {@link Double} width of the rectangle whose area to be calculated.
+     * @return {@link Double} the area of the rectangle.
+     */
+    public static double rectangleArea(double length, double width) {
+        return length * width;
+    }
+
+    /**
+     * <h1>This method is used to determine the perimeter of a rectangle.</h1>
+     * <p>This method will take two parameters the first one is the length of the rectangle</p>
+     * <p> and second one is the width of the rectangle.</p>
+     * @param length {@link Double} length of the rectangle whose perimeter to be calculated.
+     * @param width {@link Double} width of the rectangle whose perimeter to be calculated.
+     * @return {@link Double} the perimeter of the rectangle.
+     */
+    public static double rectanglePerimeter(double length, double width) {
+        return 2 * (length + width);
+    }
+
+    /**
+     * <h1>This method is used to calculate the Area of a Circle</h1>
+     * <p>This method takes the radius of the Circle and returns the area occupied by the Circle.</p>
+     * @param radius {@link Double} radius of the circle whose are is to be calculated.
+     * @return {@link Double} Area of the circle
+     */
+    public static double circleArea(double radius) {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    /**
+     * <h1>This method is used to calculate the Circumference of a Circle</h1>
+     * <p>This method takes the radius of the Circle and returns the Circumference of the Circle.</p>
+     * @param radius {@link Double} radius of the circle.
+     * @return {@link Double} Circumference of the circle
+     */
+    public static double circleCircumference(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Area of a Right Angled Triangle</h1>
+     * <p>This method takes two parameter. The first one is the base of the Right Angled Triangle </p>
+     * <p>and the second one is the height of the Triangle. And returns the area of the Triangle</p>
+     * @param base {@link Double} the base of the Right Angled Triangle.
+     * @param height {@link Double} the height of the Right Angled Triangle.
+     * @return {@link Double} the Area of the Right Angled Triangle.
+     */
+    public static double rightTriangleArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Perimeter of a Right Angled Triangle</h1>
+     * <p>This method takes two parameter. The first one is the base of the Right Angled Triangle </p>
+     * <p>and the second one is the height of the Triangle. And returns the perimeter of the Triangle</p>
+     * @param base {@link Double} the base of the Right Angled Triangle.
+     * @param height {@link Double} the height of the Right Angled Triangle.
+     * @return {@link Double} the Perimeter of the Right Angled Triangle.
+     */
+    public static double rightTrianglePerimeter(double base, double height) {
+
+        //calculates the hypotenuse of the right angled triangle.
+        double hypotenuse = (Math.sqrt(Math.pow(base, 2) + Math.pow(height, 2)));
+
+        //The perimeter of any triangle is the addition of the 3 arm.
+        return base + height + hypotenuse;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Volume of a Box</h1>
+     * <p>Box is also called rectangular parallelepiped or right rectangular prism</p>
+     * <p>This method takes three arguments. The arguments are length, width and depth/height of the Box.</p>
+     * @param length {@link Double} The length of the Box.
+     * @param width {@link Double} The width of the Box.
+     * @param depth {@link Double} The depth or height of the Box.
+     * @return {@link Double} The volume of the Box.
+     */
+    public static double boxVolume(double length, double width, double depth) {
+        return length * width * depth;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Surface Area of a Box</h1>
+     * <p>Box is also called rectangular parallelepiped or right rectangular prism</p>
+     * <p>This method takes three arguments. The arguments are length, width and depth/height of the Box.</p>
+     * @param length {@link Double} The length of the Box.
+     * @param width {@link Double} The width of the Box.
+     * @param depth {@link Double} The depth or height of the Box.
+     * @return {@link Double} The Surface Area of the Box.
+     */
+    public static double boxSurfaceArea(double length, double width,
+                                        double depth) {
+        return 2 * (depth * (length + width) + length * width);
+    }
+
+    /**
+     * <h1>This method is used to calculate the Volume of a sphere</h1>
+     * <p>This method takes one argument. The argument is radius of the sphere.</p>
+     * @param radius {@link Double} The radius of the sphere.
+     * @return {@link Double} The volume of the sphere.
+     */
+    public static double sphereVolume(double radius) {
+        return 4.0/3.0 * Math.PI * Math.pow(radius, 3);
+    }
+
+    /**
+     * <h1>This method is used to calculate the surface area of a sphere</h1>
+     * <p>This method takes one argument. The argument is radius of the sphere.</p>
+     * @param radius {@link Double} The radius of the sphere.
+     * @return {@link Double} The surface area of the sphere.
+     */
+    public static double sphereSurfaceArea(double radius) {
+        return 4 * Math.PI * Math.pow(radius, 2);
+    }
+
 }
