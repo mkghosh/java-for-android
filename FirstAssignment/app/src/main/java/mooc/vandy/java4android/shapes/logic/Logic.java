@@ -268,4 +268,26 @@ public class Logic
                                         double depth) {
         return 2 * depth * (length + width);
     }
+
+    /**
+     * <h1>This method is used to calculate the Volume of a sphere</h1>
+     * <p>This method takes one argument. The argument is radius of the sphere.</p>
+     * @param radius {@link Double} The radius of the sphere.
+     * @return {@link Double} The volume of the sphere.
+     */
+    @Contract(pure = true)
+    public static double sphereVolume(double radius) {
+        return 4.0/3.0 * Math.PI * Math.pow(radius, 3);
+    }
+
+    /**
+     * <h1>This method is used to calculate the surface area of a sphere</h1>
+     * <p>This method takes one argument. The argument is radius of the sphere.</p>
+     * @param radius {@link Double} The radius of the sphere.
+     * @return {@link Double} The surface area of the sphere.
+     */
+    @Contract(pure = true)
+    public static double sphereSurfaceArea(double radius) {
+        return 4 * Math.PI * Math.pow(radius, 2);
+    }
 }
