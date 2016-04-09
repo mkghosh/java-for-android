@@ -240,4 +240,32 @@ public class Logic
         return base + height + hypotenuse;
     }
 
+    /**
+     * <h1>This method is used to calculate the Volume of a Box</h1>
+     * <p>Box is also called rectangular parallelepiped or right rectangular prism</p>
+     * <p>This method takes three arguments. The arguments are length, width and depth/height of the Box.</p>
+     * @param length {@link Double} The length of the Box.
+     * @param width {@link Double} The width of the Box.
+     * @param depth {@link Double} The depth or height of the Box.
+     * @return {@link Double} The volume of the Box.
+     */
+    @Contract(pure = true)
+    public static double boxVolume(double length, double width, double depth) {
+        return length * width * depth;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Surface Area of a Box</h1>
+     * <p>Box is also called rectangular parallelepiped or right rectangular prism</p>
+     * <p>This method takes three arguments. The arguments are length, width and depth/height of the Box.</p>
+     * @param length {@link Double} The length of the Box.
+     * @param width {@link Double} The width of the Box.
+     * @param depth {@link Double} The depth or height of the Box.
+     * @return {@link Double} The Surface Area of the Box.
+     */
+    @Contract(pure = true)
+    public static double boxSurfaceArea(double length, double width,
+                                        double depth) {
+        return 2 * depth * (length + width);
+    }
 }
