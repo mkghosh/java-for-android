@@ -161,5 +161,31 @@ public class Logic
     }
 
     // TODO -- add your code here
+    /**
+     * <h1>This method is used to determine the area of a rectangle.</h1>
+     * <p>This method will take two parameters the first one is the length of the rectangle</p>
+     * <p> and second one is the width of the rectangle.</p>
+     * @param length {@link Double} length of the rectangle whose area to be calculated.
+     * @param width {@link Double} width of the rectangle whose area to be calculated.
+     * @return {@link Double} the area of the rectangle.
+     */
+    @Contract(pure = true)
+    public static double rectangleArea(double length, double width) {
+        return length * width;
+    }
+
+    /**
+     * <h1>This method is used to determine the perimeter of a rectangle.</h1>
+     * <p>This method will take two parameters the first one is the length of the rectangle</p>
+     * <p> and second one is the width of the rectangle.</p>
+     * @param length {@link Double} length of the rectangle whose perimeter to be calculated.
+     * @param width {@link Double} width of the rectangle whose perimeter to be calculated.
+     * @return {@link Double} the perimeter of the rectangle.
+     */
+    @Contract(pure = true)
+    public static double rectanglePerimeter(double length, double width) {
+        return 2 * (length + width);
+    }
+
 
 }
