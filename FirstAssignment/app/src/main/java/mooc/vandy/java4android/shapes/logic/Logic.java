@@ -209,5 +209,35 @@ public class Logic
         return 2 * Math.PI * radius;
     }
 
+    /**
+     * <h1>This method is used to calculate the Area of a Right Angled Triangle</h1>
+     * <p>This method takes two parameter. The first one is the base of the Right Angled Triangle </p>
+     * <p>and the second one is the height of the Triangle. And returns the area of the Triangle</p>
+     * @param base {@link Double} the base of the Right Angled Triangle.
+     * @param height {@link Double} the height of the Right Angled Triangle.
+     * @return {@link Double} the Area of the Right Angled Triangle.
+     */
+    @Contract(pure = true)
+    public static double rightTriangleArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    /**
+     * <h1>This method is used to calculate the Perimeter of a Right Angled Triangle</h1>
+     * <p>This method takes two parameter. The first one is the base of the Right Angled Triangle </p>
+     * <p>and the second one is the height of the Triangle. And returns the perimeter of the Triangle</p>
+     * @param base {@link Double} the base of the Right Angled Triangle.
+     * @param height {@link Double} the height of the Right Angled Triangle.
+     * @return {@link Double} the Perimeter of the Right Angled Triangle.
+     */
+    @Contract(pure = true)
+    public static double rightTrianglePerimeter(double base, double height) {
+
+        //calculates the hypotenuse of the right angled triangle.
+        double hypotenuse = (Math.sqrt(Math.pow(base, 2) + Math.pow(height, 2)));
+
+        //The perimeter of any triangle is the addition of the 3 arm.
+        return base + height + hypotenuse;
+    }
 
 }
