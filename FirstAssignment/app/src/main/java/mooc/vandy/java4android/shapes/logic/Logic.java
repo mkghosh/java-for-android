@@ -169,7 +169,6 @@ public class Logic
      * @param width {@link Double} width of the rectangle whose area to be calculated.
      * @return {@link Double} the area of the rectangle.
      */
-    @Contract(pure = true)
     public static double rectangleArea(double length, double width) {
         return length * width;
     }
@@ -182,7 +181,6 @@ public class Logic
      * @param width {@link Double} width of the rectangle whose perimeter to be calculated.
      * @return {@link Double} the perimeter of the rectangle.
      */
-    @Contract(pure = true)
     public static double rectanglePerimeter(double length, double width) {
         return 2 * (length + width);
     }
@@ -193,7 +191,6 @@ public class Logic
      * @param radius {@link Double} radius of the circle whose are is to be calculated.
      * @return {@link Double} Area of the circle
      */
-    @Contract(pure = true)
     public static double circleArea(double radius) {
         return Math.PI * Math.pow(radius, 2);
     }
@@ -204,7 +201,6 @@ public class Logic
      * @param radius {@link Double} radius of the circle.
      * @return {@link Double} Circumference of the circle
      */
-    @Contract(pure = true)
     public static double circleCircumference(double radius) {
         return 2 * Math.PI * radius;
     }
@@ -217,7 +213,6 @@ public class Logic
      * @param height {@link Double} the height of the Right Angled Triangle.
      * @return {@link Double} the Area of the Right Angled Triangle.
      */
-    @Contract(pure = true)
     public static double rightTriangleArea(double base, double height) {
         return 0.5 * base * height;
     }
@@ -230,7 +225,6 @@ public class Logic
      * @param height {@link Double} the height of the Right Angled Triangle.
      * @return {@link Double} the Perimeter of the Right Angled Triangle.
      */
-    @Contract(pure = true)
     public static double rightTrianglePerimeter(double base, double height) {
 
         //calculates the hypotenuse of the right angled triangle.
@@ -249,7 +243,6 @@ public class Logic
      * @param depth {@link Double} The depth or height of the Box.
      * @return {@link Double} The volume of the Box.
      */
-    @Contract(pure = true)
     public static double boxVolume(double length, double width, double depth) {
         return length * width * depth;
     }
@@ -263,7 +256,6 @@ public class Logic
      * @param depth {@link Double} The depth or height of the Box.
      * @return {@link Double} The Surface Area of the Box.
      */
-    @Contract(pure = true)
     public static double boxSurfaceArea(double length, double width,
                                         double depth) {
         return 2 * depth * (length + width);
@@ -275,7 +267,6 @@ public class Logic
      * @param radius {@link Double} The radius of the sphere.
      * @return {@link Double} The volume of the sphere.
      */
-    @Contract(pure = true)
     public static double sphereVolume(double radius) {
         return 4.0/3.0 * Math.PI * Math.pow(radius, 3);
     }
@@ -286,7 +277,6 @@ public class Logic
      * @param radius {@link Double} The radius of the sphere.
      * @return {@link Double} The surface area of the sphere.
      */
-    @Contract(pure = true)
     public static double sphereSurfaceArea(double radius) {
         return 4 * Math.PI * Math.pow(radius, 2);
     }
