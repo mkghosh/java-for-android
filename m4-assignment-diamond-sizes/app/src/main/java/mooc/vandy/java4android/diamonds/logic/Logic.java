@@ -47,8 +47,79 @@ public class Logic
     public void process(int size) {
 
         // TODO -- add your code here
+        drawDiamond(size);
 
     }
 
-     // TODO -- add your code here
+    private void drawDiamond(int size) {
+        int totalRow = 2 * size + 1;
+//        log("Total Row is : " + totalRow);
+        int totalCol = totalRow + 1;
+//        log("Total column is : " + totalCol);
+        for(int i = 1; i <= totalRow; i++){
+            //TODO Need to be updated
+            if(i == 1 || i == totalRow) {
+                drawEndingLine(totalCol);
+            } else if(i == (size + 1)) {
+                drawMiddleLine(totalCol);
+            } /*else {
+                drawLine();
+            }*/
+        }
+
+    }
+
+    // TODO -- add your code here
+
+    private void drawLine() {
+
+    }
+
+    private void drawEndingLine(int lineLength) {
+        log("the lineLength is : " + lineLength);
+        for (int i = 0; i < lineLength; i++) {
+
+            if(i == 0) {
+                mOut.print("+");
+            } else if(i == lineLength -1) {
+                mOut.println("+");
+            } else {
+                mOut.print("-");
+            }
+        }
+    }
+
+    private void drawMiddleLine(int lineLength) {
+        if(lineLength == 4) {
+            mOut.print("|<>|\n");
+        } else {
+            boolean even = lineLength%2 == 0;
+            for(int i = 1; i < lineLength; i++) {
+                if(i == 1) {
+                    mOut.print("|<");
+                } else if(i == lineLength - 2) {
+                    mOut.println(">|");
+                    break;
+                } else {
+                    if(even) {
+
+                    } else {
+
+                    }
+                }
+            }
+        }
+    }
+
+    private void drawUpperDiamond(int size) {
+
+    }
+
+    private void drawLowerDiamond(int size) {
+
+    }
+
+    private void log(String str) {
+        Log.d("TestM >>> ",str);
+    }
 }
