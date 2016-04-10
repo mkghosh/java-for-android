@@ -71,6 +71,7 @@ public class Logic
 
     private void drawLines(int lineNumber,int lineLength, int size) {
         boolean even = lineNumber % 2 == 0;
+        boolean lower = lineNumber > size;
         int lineSpecing = 0;
         if(lineNumber <= size) {
             lineSpecing = size - (lineNumber - 1);
@@ -84,7 +85,8 @@ public class Logic
                 mOut.println("|");
             } else if(i <= lineSpecing) {
                 drawSpace(lineSpecing);
-                i = lineSpecing;
+                mOut.print(lower ? "\\" : "/");
+                i = lineSpecing + 1;
             }
 
             else{
@@ -131,11 +133,7 @@ public class Logic
     }
 
     private void drawEvenOdd(boolean even) {
-        if(even) {
-            mOut.print("=");
-        } else {
-            mOut.print("-");
-        }
+        mOut.print(even?"=":"-");
     }
 
     private void drawUpperDiamond(int size) {
