@@ -1,6 +1,5 @@
 package mooc.vandy.java4android.diamonds.logic;
 
-import android.util.Log;
 import mooc.vandy.java4android.diamonds.ui.OutputInterface;
 
 /**
@@ -51,16 +50,31 @@ public class Logic
 
     }
 
+    //This private method will Draw the entire diamond
+    //It takes the size of the diamond as its parameter
     private void drawDiamond(int size) {
+
+        //Calculating total row of the diamond
         int totalRow = 2 * size + 1;
+        //Calculating total column of the diamond
         int totalCol = totalRow + 1;
+
+        //Looping over the total row.
         for(int i = 1; i <= totalRow; i++){
-            //TODO Needs to be updated
-            if(i == 1 || i == totalRow) {
+
+            if(i == 1 || i == totalRow)
+            {
+                //Draws the ending lines of the diamond (i.e first and last line).
                 drawEndingLine(totalCol);
-            } else if(i == (size + 1)) {
+            }
+            else if(i == (size + 1))
+            {
+                //Draws the middle line of the diamond.
                 drawMiddleLine(i, totalCol);
-            } else {
+            }
+            else
+            {
+                //Draws other lines of the diamond.
                 drawLines(i,totalCol,size);
             }
         }
@@ -69,84 +83,117 @@ public class Logic
 
     // TODO -- add your code here
 
+    //Draws lines other then ending and middle
+    //This method takes three parameter line number line length (i.e column number) and the size of the diamond.
     private void drawLines(int lineNumber,int lineLength, int size) {
+        //Checking if the line number is even or odd.
         boolean even = lineNumber % 2 == 0;
+
+        //Checking if the line is lower part or upper part.
         boolean lower = lineNumber > size;
-        int lineSpecing = 0;
-        if(lineNumber <= size) {
-            lineSpecing = size - (lineNumber - 1);
-        } else {
-            lineSpecing = lineNumber - (size +1);
+
+        int lineSpacing = 0;
+
+        //Calculating the line spacing.
+        if(lineNumber <= size)
+        {
+            lineSpacing = size - (lineNumber - 1);
         }
+        else
+        {
+            lineSpacing = lineNumber - (size +1);
+        }
+
+        //Looping over the length of the line.
         for(int i = 0; i < lineLength; i++) {
-            if(i == 0) {
+            if(i == 0)
+            {
                 mOut.print("|");
-            } else if(i == lineLength -1) {
+            }
+            else if(i == lineLength -1)
+            {
                 mOut.println("|");
-            } else if(i <= lineSpecing) {
-                drawSpace(lineSpecing);
+            }
+            else if(i <= lineSpacing)
+            {
+                drawSpace(lineSpacing);
                 mOut.print(lower ? "\\" : "/");
-                i = lineSpecing + 1;
-            } else if((lineSpecing + i) == (lineLength - 2) ){
+                i = lineSpacing + 1;
+            }
+            else if((lineSpacing + i) == (lineLength - 2) )
+            {
                 mOut.print(lower ? "/" : "\\");
-                drawSpace(lineSpecing);
-                i += lineSpecing;
-            } else{
-                drawEvenOdd(even);
+                drawSpace(lineSpacing);
+                i += lineSpacing;
+            }
+            else
+            {
+                drawEvenOddNotation(even);
             }
         }
     }
 
+    //Draws the required spaces
     private void drawSpace(int numberOfSpace) {
-        for (int i = 0; i < numberOfSpace; i++) {
+
+        for (int i = 0; i < numberOfSpace; i++)
+        {
             mOut.print(" ");
         }
     }
 
+    //Draws the ending lines (i.e the starting and the last line) of the diamond
     private void drawEndingLine(int lineLength) {
-        for (int i = 0; i < lineLength; i++) {
 
-            if(i == 0) {
+        for (int i = 0; i < lineLength; i++)
+        {
+            if(i == 0)
+            {
                 mOut.print("+");
-            } else if(i == lineLength -1) {
+            }
+            else if(i == lineLength -1)
+            {
                 mOut.println("+");
-            } else {
+            }
+            else
+            {
                 mOut.print("-");
             }
         }
     }
 
+    //Draws the middle line of the diamond.
     private void drawMiddleLine(int lineNumber, int lineLength) {
-        if(lineLength == 4) {
+
+        if(lineLength == 4)
+        {
             mOut.print("|<>|\n");
-        } else {
+        }
+        else
+        {
             boolean even = lineNumber % 2 == 0;
-            for(int i = 1; i < lineLength; i++) {
-                if(i == 1) {
+
+            for(int i = 1; i < lineLength; i++)
+            {
+                if(i == 1)
+                {
                     mOut.print("|<");
-                } else if(i == lineLength - 2) {
+                }
+                else if(i == lineLength - 2)
+                {
                     mOut.println(">|");
                     break;
-                } else {
-                    drawEvenOdd(even);
+                }
+                else
+                {
+                    drawEvenOddNotation(even);
                 }
             }
         }
     }
 
-    private void drawEvenOdd(boolean even) {
+    //Draws the even or odd notation (i.e "=" or "-")
+    private void drawEvenOddNotation(boolean even) {
         mOut.print(even?"=":"-");
-    }
-
-    private void drawUpperDiamond(int size) {
-
-    }
-
-    private void drawLowerDiamond(int size) {
-
-    }
-
-    private void log(String str) {
-        Log.d("TestM >>> ",str);
     }
 }
