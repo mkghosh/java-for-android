@@ -53,17 +53,15 @@ public class Logic
 
     private void drawDiamond(int size) {
         int totalRow = 2 * size + 1;
-//        log("Total Row is : " + totalRow);
         int totalCol = totalRow + 1;
-//        log("Total column is : " + totalCol);
         for(int i = 1; i <= totalRow; i++){
-            //TODO Need to be updated
+            //TODO Needs to be updated
             if(i == 1 || i == totalRow) {
                 drawEndingLine(totalCol);
             } else if(i == (size + 1)) {
                 drawMiddleLine(i, totalCol);
             } else {
-                drawLines(i,totalCol);
+                drawLines(i,totalCol,size);
             }
         }
 
@@ -71,16 +69,33 @@ public class Logic
 
     // TODO -- add your code here
 
-    private void drawLines(int lineNumber,int lineLength) {
+    private void drawLines(int lineNumber,int lineLength, int size) {
         boolean even = lineNumber % 2 == 0;
+        int lineSpecing = 0;
+        if(lineNumber <= size) {
+            lineSpecing = size - (lineNumber - 1);
+        } else {
+            lineSpecing = lineNumber - (size +1);
+        }
         for(int i = 0; i < lineLength; i++) {
             if(i == 0) {
                 mOut.print("|");
             } else if(i == lineLength -1) {
                 mOut.println("|");
-            } else{
+            } else if(i <= lineSpecing) {
+                drawSpace(lineSpecing);
+                i = lineSpecing;
+            }
+
+            else{
                 drawEvenOdd(even);
             }
+        }
+    }
+
+    private void drawSpace(int numberOfSpace) {
+        for (int i = 0; i < numberOfSpace; i++) {
+            mOut.print(" ");
         }
     }
 
