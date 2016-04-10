@@ -61,7 +61,7 @@ public class Logic
             if(i == 1 || i == totalRow) {
                 drawEndingLine(totalCol);
             } else if(i == (size + 1)) {
-                drawMiddleLine(totalCol);
+                drawMiddleLine(i, totalCol);
             } /*else {
                 drawLine();
             }*/
@@ -89,11 +89,11 @@ public class Logic
         }
     }
 
-    private void drawMiddleLine(int lineLength) {
+    private void drawMiddleLine(int lineNumber, int lineLength) {
         if(lineLength == 4) {
             mOut.print("|<>|\n");
         } else {
-            boolean even = lineLength%2 == 0;
+            boolean even = lineNumber % 2 == 0;
             for(int i = 1; i < lineLength; i++) {
                 if(i == 1) {
                     mOut.print("|<");
@@ -102,9 +102,9 @@ public class Logic
                     break;
                 } else {
                     if(even) {
-
+                        mOut.print("=");
                     } else {
-
+                        mOut.print("-");
                     }
                 }
             }
