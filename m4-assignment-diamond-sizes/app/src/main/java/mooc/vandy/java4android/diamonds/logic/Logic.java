@@ -72,17 +72,19 @@ public class Logic
     // TODO -- add your code here
 
     private void drawLines(int lineNumber,int lineLength) {
+        boolean even = lineNumber % 2 == 0;
         for(int i = 0; i < lineLength; i++) {
             if(i == 0) {
                 mOut.print("|");
             } else if(i == lineLength -1) {
                 mOut.println("|");
+            } else{
+                drawEvenOdd(even);
             }
         }
     }
 
     private void drawEndingLine(int lineLength) {
-        log("the lineLength is : " + lineLength);
         for (int i = 0; i < lineLength; i++) {
 
             if(i == 0) {
@@ -107,13 +109,17 @@ public class Logic
                     mOut.println(">|");
                     break;
                 } else {
-                    if(even) {
-                        mOut.print("=");
-                    } else {
-                        mOut.print("-");
-                    }
+                    drawEvenOdd(even);
                 }
             }
+        }
+    }
+
+    private void drawEvenOdd(boolean even) {
+        if(even) {
+            mOut.print("=");
+        } else {
+            mOut.print("-");
         }
     }
 
