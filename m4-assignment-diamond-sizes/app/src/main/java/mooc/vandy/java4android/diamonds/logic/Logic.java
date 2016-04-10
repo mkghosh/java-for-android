@@ -87,9 +87,11 @@ public class Logic
                 drawSpace(lineSpecing);
                 mOut.print(lower ? "\\" : "/");
                 i = lineSpecing + 1;
-            }
-
-            else{
+            } else if((lineSpecing + i) == (lineLength - 2) ){
+                mOut.print(lower ? "/" : "\\");
+                drawSpace(lineSpecing);
+                i += lineSpecing;
+            } else{
                 drawEvenOdd(even);
             }
         }
