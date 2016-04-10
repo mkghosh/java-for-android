@@ -62,17 +62,23 @@ public class Logic
                 drawEndingLine(totalCol);
             } else if(i == (size + 1)) {
                 drawMiddleLine(i, totalCol);
-            } /*else {
-                drawLine();
-            }*/
+            } else {
+                drawLines(i,totalCol);
+            }
         }
 
     }
 
     // TODO -- add your code here
 
-    private void drawLine() {
-
+    private void drawLines(int lineNumber,int lineLength) {
+        for(int i = 0; i < lineLength; i++) {
+            if(i == 0) {
+                mOut.print("|");
+            } else if(i == lineLength -1) {
+                mOut.println("|");
+            }
+        }
     }
 
     private void drawEndingLine(int lineLength) {
