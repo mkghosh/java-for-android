@@ -5,7 +5,7 @@ conditionals in java. They are *if/else*, *switch* and *ternary*. in java *if/el
 can have multiple branches. When it needs to create multiple branch then the two keyword are comming together.
 As an example we can write the *if/else* condition like below.
     <p> 
-        `if(condition) {
+        if(condition) {
         <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;doSomeThing;
         <br/>
@@ -13,6 +13,6 @@ As an example we can write the *if/else* condition like below.
         <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;doOtherThing;
         <br/>
-        }`
+        }
     </p>
 </p> 
