@@ -34,5 +34,12 @@ As an example we can write the <b>if/else</b> condition like below.
     }
     </p>
     In this type of <b>if/else</b> condition there could be multiple <b>else if</b> not problem with that.
-    And <b>if/else</b> condition can be nested (i.e <b>if/else</b> condition can be form inside another <b>if/else<b>).
+    And <b>if/else</b> condition can be nested (i.e <b>if/else</b> condition can be form inside another <b>if/else</b>).
 </p>
+Now comes the ternary operator in java. Ternary operator is the question mark (?). It can be written as.
+**condition ? assignSomeValue : assignSomeOtherValue;**
+
+In coding we can write,
+**_System.out.println( 4 > 2 ? "4 is greater than 2" : "4 is not greater than 2");_**
+
+It can be said that if the condition is true then do the first work otherwise do the second.
