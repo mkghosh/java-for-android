@@ -18,7 +18,7 @@ public class Logic
      * This is a String to be used in Logging (if/when you decide you
      * need it for debugging).
      */
-    private static final String TAG =
+    public static final String TAG =
         Logic.class.getName();
 
     /**
