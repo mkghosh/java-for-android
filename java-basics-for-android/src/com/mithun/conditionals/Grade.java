@@ -6,15 +6,42 @@ package com.mithun.conditionals;
  */
 public class Grade {
 
-    private enum CharConstant{
-
-    }
     /**
      * <h1>By using this method we can calculate a single students single subject's grade</h1>
      * @param markObtained {@link Integer} the mark obtained by the student.
      * @return {@link Character} The student's grade in char representation.
      */
     public static char getGrade(int markObtained) {
-        return 0;
+        char grade = 0;
+        if(markObtained >= 90)
+            grade = 'A';
+        else if(markObtained >= 80 && markObtained < 90)
+            grade = 'B';
+        else if(markObtained >= 70 && markObtained < 80)
+            grade = 'C';
+        else if(markObtained >= 60 && markObtained < 70)
+            grade = 'D';
+        else
+            grade = 'F';
+        return grade;
+    }
+
+    public static int getGradePoint(char grade) {
+        int gradePoint = 0;
+        switch (grade) {
+            case 'A':
+                gradePoint = 4;
+                break;
+            case 'B':
+                gradePoint = 3;
+                break;
+            case 'C':
+                gradePoint = 2;
+                break;
+            case 'D':
+                gradePoint = 1;
+                break;
+        }
+        return gradePoint;
     }
 }
