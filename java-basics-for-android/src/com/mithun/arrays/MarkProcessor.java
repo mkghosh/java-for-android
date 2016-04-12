@@ -7,14 +7,39 @@ package com.mithun.arrays;
 public class MarkProcessor {
 
     public double getAverageMark(String markString){
-        String[] marks = markString.split(" ");
-        int [] marksInInteger = new int[marks.length];
-        int total = 0;
-        for(int i =0; i < marks.length; i++) {
-            marksInInteger[i] = Integer.parseInt(marks[i]);
-            total += marksInInteger[i];
-        }
-        return (double)total/marks.length;
+
+        int[] marks = getIntArray(markString);
+        return (double) sum(marks) / marks.length;
     }
 
+    public int sum(int[] intArray) {
+
+        int total = 0;
+
+        for(int i : intArray)
+            total += i;
+
+        return total;
+    }
+
+    public int[] getIntArray(String markString) {
+
+        String[] marks = markString.split(" ");
+
+        int [] marksInInteger = new int[marks.length];
+
+        for(int i =0; i < marks.length; i++) {
+            marksInInteger[i] = Integer.parseInt(marks[i]);
+        }
+
+        return marksInInteger;
+    }
+
+    public void printMarksLowerThanAverage(String markString) {
+
+        int[] intMarkArray = getIntArray(markString);
+
+        double average = getAverageMark(markString);
+        
+    }
 }
