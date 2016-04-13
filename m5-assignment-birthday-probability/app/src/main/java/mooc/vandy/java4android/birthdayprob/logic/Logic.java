@@ -1,9 +1,11 @@
 package mooc.vandy.java4android.birthdayprob.logic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -85,9 +87,9 @@ public class Logic
         int totalSimulationWithAtLeastOnePair = 0;
 
         for(int i = 0; i < count; i++) {
-            Set<Integer> simulation = birthdaySimulationSet(size,i);
+//            Set<Integer> simulation = birthdaySimulationSet(size,i);
 
-            boolean hasPair = simulation.size() < size;
+            boolean hasPair = hasSameKey(size,i);//simulation.size() < size;
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -95,6 +97,23 @@ public class Logic
         return (totalSimulationWithAtLeastOnePair * 100.0)/count;
     }
 
+    private boolean hasSameKey(int size, int simulationCount) {
+        Random random = new Random(simulationCount);
+
+        Map<Integer,Integer> birthdayMap = new HashMap<>(size);
+
+        for (int i = 0; i < size; i++) {
+            int value = random.nextInt(365);
+            if(birthdayMap.containsKey(value)) {
+                return true;
+            } else {
+                birthdayMap.put(value, 1);
+            }
+        }
+
+        return false;
+
+    }
     //Generating a Set of birthdays
     private Set<Integer> birthdaySimulationSet(int size, int simulationCount) {
 
