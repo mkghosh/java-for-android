@@ -1,9 +1,11 @@
 package mooc.vandy.java4android.birthdayprob.logic;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import mooc.vandy.java4android.birthdayprob.ui.OutputInterface;
 
@@ -85,7 +87,7 @@ public class Logic
         for(int i = 0; i < count; i++) {
             List<Integer> simulation = birthdaySimulation(size,i);
 
-            boolean hasPair = checkSameBirthday(simulation);
+            boolean hasPair = checkPair(simulation);
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -106,15 +108,23 @@ public class Logic
         return birthdayList;
     }
 
+    //Determines if the pair is available
+    private boolean checkPair(List<Integer> birthdayList) {
+        Set<Integer> birthdaySet = new HashSet<>(birthdayList);
+        return birthdaySet.size() < birthdayList.size();
+    }
+
     //Checks if any of the two candidate have the same birthday in a simulation.
     private boolean checkSameBirthday(List<Integer> birthdays) {
 
+        boolean hasPair = false;
         for (Integer birthday : birthdays) {
             for (int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size() - 1); i++) {
                 if (birthday.equals(birthdays.get(i)))
-                    return true;
+                    hasPair = true;
             }
+            if(hasPair) break;
         }
-        return false;
+        return hasPair;
     }
 }
