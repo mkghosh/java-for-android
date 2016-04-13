@@ -85,9 +85,9 @@ public class Logic
         int totalSimulationWithAtLeastOnePair = 0;
 
         for(int i = 0; i < count; i++) {
-            List<Integer> simulation = birthdaySimulation(size,i);
+            Set<Integer> simulation = birthdaySimulationSet(size,i);
 
-            boolean hasPair = checkSameBirthday(simulation);
+            boolean hasPair = simulation.size() < size;
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -95,8 +95,23 @@ public class Logic
         return (totalSimulationWithAtLeastOnePair * 100.0)/count;
     }
 
+    //Generating a Set of birthdays
+    private Set<Integer> birthdaySimulationSet(int size, int simulationCount) {
+
+        Random random = new Random(simulationCount);
+
+        Set<Integer> birthdaySet = new HashSet<>(size);
+
+        for (int i = 0; i < size; i++) {
+            birthdaySet.add(random.nextInt(365));
+        }
+
+        return birthdaySet;
+    }
+
     //Returns a list of items (i.e whole simulation
     private List<Integer> birthdaySimulation(int size, int simulationCount) {
+
         Random random = new Random(simulationCount);
 
         List<Integer> birthdayList = new ArrayList<>(size);
