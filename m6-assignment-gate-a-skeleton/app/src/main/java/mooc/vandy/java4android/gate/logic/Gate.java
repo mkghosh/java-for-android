@@ -7,6 +7,7 @@ public class Gate {
     public static final Object OUT = null;
     public static final Object IN = null;
 
+    private String swing = null;
     public boolean isLocked() {
         return false;
     }
