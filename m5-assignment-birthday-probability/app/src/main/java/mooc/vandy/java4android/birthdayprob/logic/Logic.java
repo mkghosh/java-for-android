@@ -88,8 +88,9 @@ public class Logic
 
         for(int i = 0; i < count; i++) {
 //            Set<Integer> simulation = birthdaySimulationSet(size,i);
+            List<Integer> simulation = birthdaySimulation(size, i);
 
-            boolean hasPair = hasSameKey(size,i);//simulation.size() < size;
+            boolean hasPair = checkSameBirthday(simulation);//simulation.size() < size;
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -97,6 +98,9 @@ public class Logic
         return (totalSimulationWithAtLeastOnePair * 100.0)/count;
     }
 
+    //Faster Implementation with HashMap.
+    //Checks the simulation if there is any duplicate key available for the new key.
+    //Returns true if available.
     private boolean hasSameKey(int size, int simulationCount) {
         Random random = new Random(simulationCount);
 
@@ -112,8 +116,9 @@ public class Logic
         }
 
         return false;
-
     }
+
+    //Poor implementation with Set.
     //Generating a Set of birthdays
     private Set<Integer> birthdaySimulationSet(int size, int simulationCount) {
 
@@ -126,6 +131,26 @@ public class Logic
         }
 
         return birthdaySet;
+    }
+
+    //Faster Implementation with Set
+    //Checks if Same Birthday is already available in the set.
+    private boolean sameBirthdayWithSet(int size, int simulationCount) {
+
+        Random random = new Random(simulationCount);
+
+        Set<Integer> birthdaySet = new HashSet<>(size);
+
+        for (int i = 0; i < size; i++) {
+            int value = random.nextInt(365);
+            if (birthdaySet.contains(value)) {
+                return true;
+            } else {
+                birthdaySet.add(value);
+            }
+        }
+
+        return false;
     }
 
     //Returns a list of items (i.e whole simulation
@@ -153,7 +178,7 @@ public class Logic
 
         boolean hasPair = false;
         for (Integer birthday : birthdays) {
-            for (int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size() - 1); i++) {
+            for (int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size()); i++) {
                 if (birthday.equals(birthdays.get(i)))
                     hasPair = true;
             }

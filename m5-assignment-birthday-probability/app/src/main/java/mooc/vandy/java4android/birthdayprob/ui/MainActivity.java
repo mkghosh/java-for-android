@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements OutputInterface {
      */
     @Override
     public void println(char _char) {
-        println("" + _char + "\n");
+        println("" + _char);
     }
 
     /**
