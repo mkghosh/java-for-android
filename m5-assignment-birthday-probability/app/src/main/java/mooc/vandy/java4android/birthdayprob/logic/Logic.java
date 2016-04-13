@@ -109,12 +109,9 @@ public class Logic
     //Checks if any of the two candidate have the same birthday in a simulation.
     private boolean checkSameBirthday(List<Integer> birthdays) {
 
-        Iterator<Integer> listIter = birthdays.listIterator();
-
-        while (listIter.hasNext()) {
-            int birthday = listIter.next();
-            for(int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size() - 1); i++) {
-                if(birthday == birthdays.get(i))
+        for (Integer birthday : birthdays) {
+            for (int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size() - 1); i++) {
+                if (birthday.equals(birthdays.get(i)))
                     return true;
             }
         }
