@@ -87,7 +87,7 @@ public class Logic
         for(int i = 0; i < count; i++) {
             List<Integer> simulation = birthdaySimulation(size,i);
 
-            boolean hasPair = checkPair(simulation);
+            boolean hasPair = checkSameBirthday(simulation);
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -109,13 +109,13 @@ public class Logic
     }
 
     //Determines if the pair is available
-    private boolean checkPair(List<Integer> birthdayList) {
+    public boolean checkPair(List<Integer> birthdayList) {
         Set<Integer> birthdaySet = new HashSet<>(birthdayList);
         return birthdaySet.size() < birthdayList.size();
     }
 
     //Checks if any of the two candidate have the same birthday in a simulation.
-    private boolean checkSameBirthday(List<Integer> birthdays) {
+    public boolean checkSameBirthday(List<Integer> birthdays) {
 
         boolean hasPair = false;
         for (Integer birthday : birthdays) {
