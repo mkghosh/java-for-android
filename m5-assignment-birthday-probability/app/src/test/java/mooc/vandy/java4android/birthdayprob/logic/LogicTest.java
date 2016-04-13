@@ -2,7 +2,6 @@ package mooc.vandy.java4android.birthdayprob.logic;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class LogicTest {
         studentList.add(306);
         studentList.add(34);
 
-        assertEquals("Faild this test", true, mLogic.checkPair(studentList));
+        assertEquals("Faild this test", true, mLogic.checkPairWithList(studentList));
     }
 
     @Test
@@ -44,6 +43,6 @@ public class LogicTest {
         studentList.add(306);
         studentList.add(34);
 
-        assertEquals("Faild this test", true, mLogic.checkSameBirthday(studentList));
+        assertEquals("Faild this test", true, mLogic.checkSameBirthdayWithList(studentList));
     }
 }

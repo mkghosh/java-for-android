@@ -3,7 +3,6 @@ package mooc.vandy.java4android.birthdayprob.logic;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -88,9 +87,9 @@ public class Logic
 
         for(int i = 0; i < count; i++) {
 //            Set<Integer> simulation = birthdaySimulationSet(size,i);
-            List<Integer> simulation = birthdaySimulation(size, i);
+            List<Integer> simulation = birthdaySimulationList(size, i);
 
-            boolean hasPair = checkSameBirthday(simulation);//simulation.size() < size;
+            boolean hasPair = checkPairWithList(simulation);//simulation.size() < size;
 
             if (hasPair)
                 totalSimulationWithAtLeastOnePair++;
@@ -118,21 +117,6 @@ public class Logic
         return false;
     }
 
-    //Poor implementation with Set.
-    //Generating a Set of birthdays
-    private Set<Integer> birthdaySimulationSet(int size, int simulationCount) {
-
-        Random random = new Random(simulationCount);
-
-        Set<Integer> birthdaySet = new HashSet<>(size);
-
-        for (int i = 0; i < size; i++) {
-            birthdaySet.add(random.nextInt(365));
-        }
-
-        return birthdaySet;
-    }
-
     //Faster Implementation with Set
     //Checks if Same Birthday is already available in the set.
     private boolean sameBirthdayWithSet(int size, int simulationCount) {
@@ -153,8 +137,23 @@ public class Logic
         return false;
     }
 
+    //Poor implementation with Set.
+    //Generating a Set of birthdays
+    private Set<Integer> birthdaySimulationSet(int size, int simulationCount) {
+
+        Random random = new Random(simulationCount);
+
+        Set<Integer> birthdaySet = new HashSet<>(size);
+
+        for (int i = 0; i < size; i++) {
+            birthdaySet.add(random.nextInt(365));
+        }
+
+        return birthdaySet;
+    }
+
     //Returns a list of items (i.e whole simulation
-    private List<Integer> birthdaySimulation(int size, int simulationCount) {
+    private List<Integer> birthdaySimulationList(int size, int simulationCount) {
 
         Random random = new Random(simulationCount);
 
@@ -167,14 +166,16 @@ public class Logic
         return birthdayList;
     }
 
+    //Poor implementation
     //Determines if the pair is available
-    public boolean checkPair(List<Integer> birthdayList) {
+    public boolean checkPairWithList(List<Integer> birthdayList) {
         Set<Integer> birthdaySet = new HashSet<>(birthdayList);
         return birthdaySet.size() < birthdayList.size();
     }
 
+    //Slow implementation
     //Checks if any of the two candidate have the same birthday in a simulation.
-    public boolean checkSameBirthday(List<Integer> birthdays) {
+    public boolean checkSameBirthdayWithList(List<Integer> birthdays) {
 
         boolean hasPair = false;
         for (Integer birthday : birthdays) {
