@@ -1,5 +1,8 @@
 package mooc.vandy.java4android.birthdayprob.logic;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import mooc.vandy.java4android.birthdayprob.ui.OutputInterface;
@@ -77,6 +80,44 @@ public class Logic
      */
     public double calculate(int size, int count) {
         // TODO -- add your code here
-        return 0.0;
+        int totalSimulationWithAtLeastOnePair = 0;
+
+        for(int i = 0; i < count; i++) {
+            List<Integer> simulation = birthdaySimulation(size,i);
+
+            boolean hasPair = checkSameBirthday(simulation);
+
+            if (hasPair)
+                totalSimulationWithAtLeastOnePair++;
+        }
+        return (totalSimulationWithAtLeastOnePair * 100.0)/count;
+    }
+
+    //Returns a list of items (i.e whole simulation
+    private List<Integer> birthdaySimulation(int size, int simulationCount) {
+        Random random = new Random(simulationCount);
+
+        List<Integer> birthdayList = new ArrayList<>(size);
+
+        for (int i = 0; i < size; i++) {
+            birthdayList.add(i,random.nextInt(365));
+        }
+
+        return birthdayList;
+    }
+
+    //Checks if any of the two candidate have the same birthday in a simulation.
+    private boolean checkSameBirthday(List<Integer> birthdays) {
+
+        Iterator<Integer> listIter = birthdays.listIterator();
+
+        while (listIter.hasNext()) {
+            int birthday = listIter.next();
+            for(int i = (birthdays.indexOf(birthday) + 1); i < (birthdays.size() - 1); i++) {
+                if(birthday == birthdays.get(i))
+                    return true;
+            }
+        }
+        return false;
     }
 }
