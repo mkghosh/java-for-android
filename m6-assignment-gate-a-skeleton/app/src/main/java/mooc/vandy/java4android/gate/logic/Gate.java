@@ -4,30 +4,54 @@ package mooc.vandy.java4android.gate.logic;
  * @@ Julie, please fill in here.
  */
 public class Gate {
-    public static final Object OUT = null;
-    public static final Object IN = null;
+    public static final int OUT = -1;
+    public static final int IN = 1;
 
-    private String swing = null;
-    public boolean isLocked() {
-        return false;
+    private boolean locked;
+    private int swing;
+
+    public Gate() {
+        swing = 0;
+        locked = true;
     }
 
-    public String getSwingDirection() {
-        return null;
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public int getSwingDirection() {
+        return swing;
     }
 
     public void close() {
-
+        this.locked = true;
     }
 
-    public void open(Object out) {
-
+    public boolean open(int swingDirection) {
+        locked = ! (swingDirection == 1 || swingDirection == -1);
+        return setSwing(swingDirection);
     }
 
-    public void setSwing(Object in) {
-
+    public boolean setSwing(int swing) {
+        if(swing == 1 || swing == -1) {
+            this.swing = swing;
+            return true;
+        }
+        return false;
     }
 
-    // TODO -- Fill in your code here
-  
+    public int thru(int numberOfAnimals) {
+        if(locked)
+            return 0;
+        else if(getSwingDirection() == 1)
+            return numberOfAnimals;
+        return -numberOfAnimals;
+    }
+
+    @Override
+    public String toString() {
+        if(locked)
+            return "This gate is locked";
+        return "This gate is opened";
+    }
 }
