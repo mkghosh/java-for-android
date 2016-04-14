@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         PrintStarArt starArt = new PrintStarArt();
-        starArt.printTriangleStarArt(2);
+//        starArt.printAscendingTriangleStarArt(5);
+//        starArt.printDescendingTriangleStarArt(5);
     }
 }

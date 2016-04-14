@@ -19,7 +19,7 @@ package com.mithun.conditionals;
  */
 public class PrintStarArt {
 
-    public void printTriangleStarArt(int size) {
+    public void printAscendingTriangleStarArt(int size) {
 
         int column = 2 * size + 3;
         int row = size + 3;
@@ -31,6 +31,23 @@ public class PrintStarArt {
             } else {
                 int starNumber = 2 * (i - 1) + 1;
                 printString(column, starNumber);
+            }
+
+        }
+    }
+    public void printDescendingTriangleStarArt(int size) {
+
+        int column = 2 * size + 3;
+        int row = size + 3;
+        int startingStar = column -2;
+
+        for (int i = 0; i < row; i++) {
+
+            if (i == 0 || i == row - 1) {
+                drawEndingLines(column);
+            } else {
+                printString(column, startingStar);
+                startingStar -= 2;
             }
 
         }
