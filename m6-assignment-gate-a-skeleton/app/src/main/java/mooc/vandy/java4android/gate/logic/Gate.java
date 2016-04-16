@@ -91,8 +91,25 @@ public class Gate {
 
     @Override
     public String toString() {
-        if(locked)
-            return "This gate is locked";
-        return "This gate is opened";
+        StringBuilder sb=new StringBuilder("This gate");
+        if(isLocked())
+            sb.append(" is locked");
+        else
+        {
+            sb.append(" is not locked  and swings");
+            switch (getSwingDirection())
+            {
+                case 0:
+                    sb.append(" but the swing is not set properly");
+                    break;
+                case 1:
+                    sb.append("  to enter the pen only");
+                    break;
+                case -1:
+                    sb.append(" to exit the pen only");
+                    break;
+            }
+        }
+        return sb.toString();
     }
 }
