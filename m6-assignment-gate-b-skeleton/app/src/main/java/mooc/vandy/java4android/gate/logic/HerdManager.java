@@ -10,6 +10,8 @@ import mooc.vandy.java4android.gate.ui.OutputInterface;
  * must fill in the missing logic below.
  */
 public class HerdManager {
+
+    public final int HERD = 24;
     /**
      * Reference to the output.
      */

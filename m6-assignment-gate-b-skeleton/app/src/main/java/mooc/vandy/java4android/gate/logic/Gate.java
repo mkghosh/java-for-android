@@ -93,7 +93,7 @@ public class Gate {
     public String toString() {
         StringBuilder stringBuilder=new StringBuilder("This gate");
         if(isLocked())
-            stringBuilder.append(" is locked.");
+            stringBuilder.append(" is locked");
         else
         {
             stringBuilder.append(" is not locked  and swings");
@@ -103,10 +103,10 @@ public class Gate {
                     stringBuilder.append(" but the swing is not set properly");
                     break;
                 case 1:
-                    stringBuilder.append("  for entering the pen.");
+                    stringBuilder.append("  to enter the pen only.");
                     break;
                 case -1:
-                    stringBuilder.append(" for exiting from the pen.");
+                    stringBuilder.append(" to exit the pen only.");
                     break;
             }
         }
