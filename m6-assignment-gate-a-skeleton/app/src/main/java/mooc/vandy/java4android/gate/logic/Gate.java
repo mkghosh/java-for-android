@@ -86,7 +86,7 @@ public class Gate {
             return 0;
         else if(getSwingDirection() == IN)
             return numberOfAnimals;
-        return -numberOfAnimals;
+        return OUT * numberOfAnimals;
     }
 
     @Override
