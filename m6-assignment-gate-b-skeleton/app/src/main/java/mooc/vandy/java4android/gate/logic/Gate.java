@@ -59,7 +59,6 @@ public class Gate {
      * @return {@link Boolean} true if swingDirection is valid false otherwise.
      */
     public boolean open(int swingDirection) {
-        locked = ! (swingDirection == IN || swingDirection == OUT);
         return setSwing(swingDirection);
     }
 
@@ -69,7 +68,9 @@ public class Gate {
      * @return {@link Boolean} true if swing is valid and set properly false otherwise.
      */
     public boolean setSwing(int swing) {
+
         if(swing == IN || swing == OUT) {
+            locked = false;
             this.swing = swing;
             return true;
         }
