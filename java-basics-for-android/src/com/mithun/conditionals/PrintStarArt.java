@@ -27,33 +27,41 @@ public class PrintStarArt {
         for (int i = 0; i < row; i++) {
 
             if (i == 0 || i == row - 1) {
-                drawEndingLines(column);
+                drawEndingLinesForTriangle(column);
             } else {
                 int starNumber = 2 * (i - 1) + 1;
-                printString(column, starNumber);
+                printStringForTriangle(column, starNumber);
             }
 
         }
     }
+
     public void printDescendingTriangleStarArt(int size) {
 
         int column = 2 * size + 3;
         int row = size + 3;
-        int startingStar = column -2;
+        int startingStar = column - 2;
 
         for (int i = 0; i < row; i++) {
 
             if (i == 0 || i == row - 1) {
-                drawEndingLines(column);
+                drawEndingLinesForTriangle(column);
             } else {
-                printString(column, startingStar);
+                printStringForTriangle(column, startingStar);
                 startingStar -= 2;
             }
 
         }
     }
 
-    private void printString(int column, int starNum) {
+    public void printDiamond(int size) {
+        int columnNum, rowNum;
+        columnNum = rowNum = 2 * size + 3;
+
+
+    }
+
+    private void printStringForTriangle(int column, int starNum) {
 
         int space = (column - (2 + starNum)) / 2;
 
@@ -81,7 +89,7 @@ public class PrintStarArt {
 
     }
 
-    private void drawEndingLines(int column) {
+    private void drawEndingLinesForTriangle(int column) {
 
         for (int i = 0; i < column; i++) {
             if (i == 0)
