@@ -45,15 +45,26 @@ public class HerdManager {
     }
 
     public void simulateHerd(Gate westGate, Gate eastGate, Random random) {
-        int numberOfSnail = HERD;
+        int numberOfSnailInPen = HERD;
+        int numberOfSnailInPasture = 0;
+
+        Gate gate;
         for(int i = 0; i < 10; i++) {
 
-            Random randBool = new Random(seed);
-            boolean gateSelection = randBool.nextBoolean();
+            if(numberOfSnailInPasture == 0) {
+                gate = eastGate;
+            } else {
+                boolean gateSelection = random.nextBoolean();
+                gate = gateSelection ? eastGate : westGate;
+            }
 
-            Gate gate = gateSelection ? eastGate : westGate;
-
-            Random rand = new Random(seed);
+            if(gate.getSwingDirection() == Gate.IN) {
+                numberOfSnailInPasture += gate.thru(random.nextInt(numberOfSnailInPen) + 1);
+                mOut.print("" + numberOfSnailInPasture);
+            } else {
+                numberOfSnailInPen += gate.thru(random.nextInt(numberOfSnailInPasture) + 1);
+                mOut.print("" + numberOfSnailInPen);
+            }
 
         }
     }
