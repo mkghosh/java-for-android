@@ -16,8 +16,9 @@ public abstract class Operation {
     }
 
     /**
-     * <h1>Common Method for all the four operations</h1>
-     * @return {@link Integer} result of the operations
+     * <h1>This method will do the operation to be done and return the result.</h1>
+     * <p>This is an integer operation so all the operation will work that way.</p>
+     * @return {@link Integer} returns the result obtained by the operation.
      */
     public abstract int operate();
 
