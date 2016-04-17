@@ -35,28 +35,39 @@ public class Logic
                         int argumentTwo,
                         int operation){
         // TODO -- start your code here
+
+        Operation operation1 = null;
         switch (operation) {
             case ADD:
-                int addResult = Add.add(argumentOne,argumentTwo);
-                mOut.print("" + addResult);
+                operation1 = new Add(argumentOne, argumentTwo);
+                mOut.print("" + operation1.operate());
                 break;
+
             case SUBTRACT:
-                int subResult = Subtract.subtract(argumentOne,argumentTwo);
-                mOut.print("" + subResult);
+                operation1 = new Subtract(argumentOne, argumentTwo);
+                mOut.print("" + operation1.operate());
                 break;
+
             case MULTIPLY:
-                int multResult = Multiply.multiply(argumentOne, argumentTwo);
-                mOut.print("" + multResult);
+                operation1 = new Multiply(argumentOne, argumentTwo);
+                mOut.print("" + operation1.operate());
                 break;
+
             case DIVIDE:
                 if(argumentTwo == 0) {
-                    mOut.print("No number can be divided by zero. Please provide a number other then zero in the second argument.");
+                    mOut.createToast("No number can be divided by zero. Please provide a number other then zero in the second argument.");
                     break;
                 }
-                int divResult = Divide.operate(argumentOne, argumentTwo);
-                int remainder = Divide.remainder(argumentOne, argumentTwo);
+
+                operation1 = new Divide(argumentOne, argumentTwo);
+                //casting the operatoin1 object to Divide to able to access the specialized method of the Divide class.
+                Divide divisionOperator = (Divide) operation1;
+
+                int divResult = divisionOperator.operate();
+                int remainder = divisionOperator.remainder(argumentOne, argumentTwo);
 
                 mOut.print("" + divResult + " R: " + remainder );
+                break;
         }
     }
 }

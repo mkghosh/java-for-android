@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -159,5 +160,10 @@ public class MainActivity extends
     @Override
     public void print(String resultString) {
         mResult.setText(resultString);
+    }
+
+    @Override
+    public void createToast(String toastText) {
+        Toast.makeText(this,toastText,Toast.LENGTH_LONG);
     }
 }

@@ -27,7 +27,7 @@ public class Divide extends Operation{
      * @param secondNumber {@link Integer} second number of the operation provided by the user.
      * @return {@link Integer} returns the remainder of the division operator.
      */
-    public static int remainder(int firstNumber, int secondNumber) {
+    public int remainder(int firstNumber, int secondNumber) {
         return firstNumber % secondNumber;
     }
 }

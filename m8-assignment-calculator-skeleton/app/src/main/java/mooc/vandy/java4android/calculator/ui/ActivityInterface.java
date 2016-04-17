@@ -23,4 +23,6 @@ public interface ActivityInterface {
      * Print the result to the user's display.
      */
     public void print(String resultString);
+
+    public void createToast(String toastText);
 }
