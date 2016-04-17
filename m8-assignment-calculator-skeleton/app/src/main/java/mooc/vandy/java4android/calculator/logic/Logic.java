@@ -56,7 +56,7 @@ public class Logic
                 int divResult = Divide.operate(argumentOne, argumentTwo);
                 int remainder = Divide.remainder(argumentOne, argumentTwo);
 
-                mOut.print("" + divResult + ". \n" + "" + remainder );
+                mOut.print("" + divResult + " R: " + remainder );
         }
     }
 }
