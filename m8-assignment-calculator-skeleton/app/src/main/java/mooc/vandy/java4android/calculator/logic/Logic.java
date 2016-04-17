@@ -11,6 +11,11 @@ import mooc.vandy.java4android.calculator.ui.ActivityInterface;
  */
 public class Logic 
        implements LogicInterface {
+
+    private static final int ADD = 1;
+    private static final int SUBTRACT = 2;
+    private static final int MULTIPLY = 3;
+    private static final int DIVIDE = 4;
     /**
      * Reference to the Activity output.
      */
@@ -30,5 +35,9 @@ public class Logic
                         int argumentTwo,
                         int operation){
         // TODO -- start your code here
+        switch (operation) {
+            case ADD:
+
+        }
     }
 }
