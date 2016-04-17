@@ -12,7 +12,7 @@ public class Multiply {
      * @param secondNumber {@link Integer} second number of the operation provided by the user.
      * @return {@link Integer} returns the result obtained by the operation.
      */
-    public int multiply(int firstNumber, int secondNumber) {
+    public static int multiply(int firstNumber, int secondNumber) {
         return firstNumber * secondNumber;
     }
 

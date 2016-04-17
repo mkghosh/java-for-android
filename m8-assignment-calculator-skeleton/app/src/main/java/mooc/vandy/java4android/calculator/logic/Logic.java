@@ -37,7 +37,26 @@ public class Logic
         // TODO -- start your code here
         switch (operation) {
             case ADD:
+                int addResult = Add.add(argumentOne,argumentTwo);
+                mOut.print("" + addResult);
+                break;
+            case SUBTRACT:
+                int subResult = Subtract.subtract(argumentOne,argumentTwo);
+                mOut.print("" + subResult);
+                break;
+            case MULTIPLY:
+                int multResult = Multiply.multiply(argumentOne, argumentTwo);
+                mOut.print("" + multResult);
+                break;
+            case DIVIDE:
+                if(argumentTwo == 0) {
+                    mOut.print("No number can be divided by zero. Please provide a number other then zero in the second argument.");
+                    break;
+                }
+                int divResult = Divide.operate(argumentOne, argumentTwo);
+                int remainder = Divide.remainder(argumentOne, argumentTwo);
 
+                mOut.print("" + divResult + ". \n" + "" + remainder );
         }
     }
 }

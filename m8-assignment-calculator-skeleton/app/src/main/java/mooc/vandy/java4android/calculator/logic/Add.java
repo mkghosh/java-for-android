@@ -12,7 +12,7 @@ public class Add {
      * @param secondNumber {@link Integer} second number of the operation provided by the user.
      * @return {@link Integer} returns the result obtained by the operation.
      */
-    public int add(int firstNumber, int secondNumber) {
+    public static int add(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }
 }

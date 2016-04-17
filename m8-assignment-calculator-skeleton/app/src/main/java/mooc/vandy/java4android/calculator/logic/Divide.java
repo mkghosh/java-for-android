@@ -15,7 +15,7 @@ public class Divide {
      * @param secondNumber {@link Integer} second number of the operation provided by the user.
      * @return {@link Integer} returns the result obtained by the operation.
      */
-    public int operate(int firstNumber, int secondNumber) {
+    public static int operate(int firstNumber, int secondNumber) {
         return firstNumber / secondNumber;
     }
 
@@ -25,7 +25,7 @@ public class Divide {
      * @param secondNumber {@link Integer} second number of the operation provided by the user.
      * @return {@link Integer} returns the remainder of the division operator.
      */
-    public int remainder(int firstNumber, int secondNumber) {
+    public static int remainder(int firstNumber, int secondNumber) {
         return firstNumber % secondNumber;
     }
 }
