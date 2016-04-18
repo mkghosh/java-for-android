@@ -1,7 +1,9 @@
 package mooc.vandy.java4android.gate.logic;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runners.JUnit4;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -9,7 +11,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 
+import io.magnum.autograder.junit.JUnitEvaluator;
 import io.magnum.autograder.junit.Rubric;
 import mooc.vandy.java4android.gate.logic.tools.TestingOutputInterface;
 
@@ -138,6 +142,12 @@ public class AllUnitTests {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println("the actual value : " + actual.size());
+        for(int i =0; i < actual.size(); i++) {
+            System.out.println("the actual value : " + actual.get(i));
+        }
+
 
 		assertTrue(expected1.equals(actual) || expected2.equals(actual));
     }

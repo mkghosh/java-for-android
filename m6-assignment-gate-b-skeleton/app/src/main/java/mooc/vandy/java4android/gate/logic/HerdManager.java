@@ -19,8 +19,6 @@ public class HerdManager {
      */
     private OutputInterface mOut;
 
-    private long seed = 1234;
-
     //The Gates to need to work with the Gate class.
     private Gate westGate; //In to the Herd
     private Gate eastGate; //Out from the Herd (i.e got to pastrue)
@@ -50,28 +48,30 @@ public class HerdManager {
         int numberOfSnailInPen = HERD;
         int numberOfSnailInPasture = 0;
 
+        mOut.print(numberOfSnailInPen + " ");
+        mOut.print(numberOfSnailInPasture + " ");
         Gate gate;
         for(int i = 0; i < 10; i++) {
 
             if(numberOfSnailInPasture == 0) {
                 gate = eastGate;
-                Log.e("Gate","Gate is selected East");
             } else {
                 boolean gateSelection = random.nextBoolean();
                 gate = gateSelection ? eastGate : westGate;
-                Log.e("Gate","Gate is selected " + gate);
             }
 
             if(gate.getSwingDirection() == Gate.IN) {
                 int numberOfSnailToMove = random.nextInt(numberOfSnailInPasture) + 1;
-                numberOfSnailInPasture -= gate.thru(numberOfSnailToMove);
+                numberOfSnailInPasture -= numberOfSnailToMove;
                 numberOfSnailInPen += numberOfSnailToMove;
-                mOut.print("" + numberOfSnailInPasture);
+                mOut.print(numberOfSnailInPasture + " ");
+                mOut.print(numberOfSnailInPen  + " ");
             } else {
                 int numberOfSnailToMove = random.nextInt(numberOfSnailInPen) + 1;
-                numberOfSnailInPen -= gate.thru(numberOfSnailToMove);
+                numberOfSnailInPen -= numberOfSnailToMove;
                 numberOfSnailInPasture += numberOfSnailToMove;
-                mOut.print("" + numberOfSnailInPen);
+                mOut.print(numberOfSnailInPen + " ");
+                mOut.print(numberOfSnailInPasture + " ");
             }
 
         }
