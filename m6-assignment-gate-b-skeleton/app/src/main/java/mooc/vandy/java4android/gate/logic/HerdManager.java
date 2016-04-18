@@ -59,10 +59,14 @@ public class HerdManager {
             }
 
             if(gate.getSwingDirection() == Gate.IN) {
-                numberOfSnailInPasture += gate.thru(random.nextInt(numberOfSnailInPen) + 1);
+                int numberOfSnailToMove = random.nextInt(numberOfSnailInPasture) + 1;
+                numberOfSnailInPasture += gate.thru(numberOfSnailToMove);
+                numberOfSnailInPen -= numberOfSnailToMove;
                 mOut.print("" + numberOfSnailInPasture);
             } else {
-                numberOfSnailInPen += gate.thru(random.nextInt(numberOfSnailInPasture) + 1);
+                int numberOfSnailToMove = random.nextInt(numberOfSnailInPen) + 1;
+                numberOfSnailInPen += gate.thru(numberOfSnailToMove);
+                numberOfSnailInPasture -= numberOfSnailToMove;
                 mOut.print("" + numberOfSnailInPen);
             }
 
