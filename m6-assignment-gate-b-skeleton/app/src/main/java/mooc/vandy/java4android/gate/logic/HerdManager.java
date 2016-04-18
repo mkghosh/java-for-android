@@ -1,5 +1,7 @@
 package mooc.vandy.java4android.gate.logic;
 
+import android.util.Log;
+
 import java.util.Random;
 
 import mooc.vandy.java4android.gate.ui.OutputInterface;
@@ -53,20 +55,22 @@ public class HerdManager {
 
             if(numberOfSnailInPasture == 0) {
                 gate = eastGate;
+                Log.e("Gate","Gate is selected East");
             } else {
                 boolean gateSelection = random.nextBoolean();
                 gate = gateSelection ? eastGate : westGate;
+                Log.e("Gate","Gate is selected " + gate);
             }
 
             if(gate.getSwingDirection() == Gate.IN) {
                 int numberOfSnailToMove = random.nextInt(numberOfSnailInPasture) + 1;
-                numberOfSnailInPasture += gate.thru(numberOfSnailToMove);
-                numberOfSnailInPen -= numberOfSnailToMove;
+                numberOfSnailInPasture -= gate.thru(numberOfSnailToMove);
+                numberOfSnailInPen += numberOfSnailToMove;
                 mOut.print("" + numberOfSnailInPasture);
             } else {
                 int numberOfSnailToMove = random.nextInt(numberOfSnailInPen) + 1;
-                numberOfSnailInPen += gate.thru(numberOfSnailToMove);
-                numberOfSnailInPasture -= numberOfSnailToMove;
+                numberOfSnailInPen -= gate.thru(numberOfSnailToMove);
+                numberOfSnailInPasture += numberOfSnailToMove;
                 mOut.print("" + numberOfSnailInPen);
             }
 
