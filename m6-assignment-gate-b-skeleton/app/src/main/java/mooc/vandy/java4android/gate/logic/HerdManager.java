@@ -46,35 +46,32 @@ public class HerdManager {
     }
 
     public void simulateHerd(Gate westGate, Gate eastGate, Random random) {
-        int numberOfSnailInPen = HERD;
-        int numberOfSnailInPasture = 0;
+        int inPen = HERD;
+        int inPasture = 0;
 
-        mOut.print(numberOfSnailInPen + " ");
-        mOut.print(numberOfSnailInPasture + " ");
+        mOut.print(inPen + " ");
+        mOut.print(inPasture + " ");
         Gate gate = null;
-        Random rand = new Random(seed);
         for(int i = 0; i < 10; i++) {
 
-            if(numberOfSnailInPasture == 0) {
+            if(inPasture == 0) {
                 gate = eastGate;
             } else {
-                boolean gateSelection = random.nextInt(1) == 1;
-                gate = gateSelection ? eastGate : westGate;
-
+                gate = random.nextBoolean() ? eastGate : westGate;
             }
 
             if(gate.getSwingDirection() == Gate.IN) {
-                int numberOfSnailToMove = random.nextInt(numberOfSnailInPasture) + 1;
-                numberOfSnailInPasture -= numberOfSnailToMove;
-                numberOfSnailInPen += numberOfSnailToMove;
-                mOut.print(numberOfSnailInPasture + " ");
-                mOut.print(numberOfSnailInPen  + " ");
+                int numberOfSnailToMove = random.nextInt(inPasture) + 1;
+                inPasture -= numberOfSnailToMove;
+                inPen += numberOfSnailToMove;
+                mOut.print(inPen  + " ");
+                mOut.print(inPasture + " ");
             } else {
-                int numberOfSnailToMove = random.nextInt(numberOfSnailInPen) + 1;
-                numberOfSnailInPen -= numberOfSnailToMove;
-                numberOfSnailInPasture += numberOfSnailToMove;
-                mOut.print(numberOfSnailInPen + " ");
-                mOut.print(numberOfSnailInPasture + " ");
+                int numberOfSnailToMove = random.nextInt(inPen) + 1;
+                inPen -= numberOfSnailToMove;
+                inPasture += numberOfSnailToMove;
+                mOut.print(inPen + " ");
+                mOut.print(inPasture + " ");
             }
 
         }

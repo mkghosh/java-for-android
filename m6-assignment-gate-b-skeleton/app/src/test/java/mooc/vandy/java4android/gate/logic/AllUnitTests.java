@@ -143,12 +143,6 @@ public class AllUnitTests {
             e.printStackTrace();
         }
 
-        System.out.println("the actual value : " + actual.size());
-        for(int i =0; i < actual.size(); i++) {
-            System.out.println("the actual value : " + actual.get(i));
-        }
-
-
 		assertTrue(expected1.equals(actual) || expected2.equals(actual));
     }
 
