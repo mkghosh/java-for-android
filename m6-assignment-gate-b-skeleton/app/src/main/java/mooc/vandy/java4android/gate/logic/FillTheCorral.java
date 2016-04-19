@@ -17,9 +17,6 @@ public class FillTheCorral {
      */
     private OutputInterface mOut;
 
-    //Initial value of the snails out to pasture.
-    private int snailOutToPasture = 5;
-
     /**
      * Constructor initializes the field.
      */
@@ -86,11 +83,38 @@ public class FillTheCorral {
      * @param rand {@link Random} determines number of snails to send or get.
      */
     public void corralSnails(Gate[] corral, Random rand) {
+        //Initial value of the snails out to pasture.
+        int snailOutToPasture = 5;
+
+        //Indefinite loop to loops until snailOutToPasture gets to zero
+        while(snailOutToPasture > 0) {
+
+            //determines gate number.
+            int gateNumber = new Random().nextInt(4) + 1;
+            Gate gate = corral[gateNumber];
+
+            //determines the number of snail to move
+            int numberOfSnail = rand.nextInt(snailOutToPasture);
+
+            if(gate.getSwingDirection() == Gate.IN) {
+                snailOutToPasture -= numberOfSnail;
+            } else {
+                snailOutToPasture += numberOfSnail;
+            }
+            //prints the snails status
+            printSnailStatus(gate, gateNumber, numberOfSnail, snailOutToPasture);
+        }
 
     }
 
+    //Print out the status of the gate.
     private void printGateStatus(Gate gate, int number) {
         System.out.println("Gate " + number + ": " + gate.toString());
+    }
+
+    private void printSnailStatus(Gate gate, int gateNumber, int numOfSnail, int snailOutToPasture) {
+        //5 snails are trying to move through locked coral 2.
+//        There are currently 5 snails still in the pasture.
     }
     
 }
