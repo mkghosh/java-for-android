@@ -66,8 +66,7 @@ public class HerdManager {
         int inPasture = 0;
 
         //printing out the current value of the snails in pen and pasture.
-        mOut.print(inPen + " ");
-        mOut.print(inPasture + " ");
+        printCurrentStatus(inPen, inPasture);
 
         //initializing the Gate with null value
         Gate gate = null;
@@ -89,16 +88,19 @@ public class HerdManager {
                 int numberOfSnailToMove = random.nextInt(inPasture) + 1;
                 inPasture -= numberOfSnailToMove;
                 inPen += numberOfSnailToMove;
-                mOut.print(inPen  + " ");
-                mOut.print(inPasture + " ");
             } else {
                 int numberOfSnailToMove = random.nextInt(inPen) + 1;
                 inPen -= numberOfSnailToMove;
                 inPasture += numberOfSnailToMove;
-                mOut.print(inPen + " ");
-                mOut.print(inPasture + " ");
             }
 
+            //Printing out the status of the pen and pasture
+            printCurrentStatus(inPen, inPasture);
+
         }
+    }
+
+    private void printCurrentStatus(int inPen, int inPasture) {
+        mOut.println("There are currently " + inPen + " snails in the pen and " + inPasture + " snails in the pasture");
     }
 }

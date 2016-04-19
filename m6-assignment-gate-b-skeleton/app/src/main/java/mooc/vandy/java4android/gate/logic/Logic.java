@@ -67,13 +67,13 @@ public class Logic implements LogicInterface {
             Gate eastGate = new Gate();
             Gate westGate = new Gate();
 
-            mOut.println("East Gate: "+eastGate);
-            mOut.println("West Gate: "+westGate);
+            mOut.println("East Gate: "+ eastGate);
+            mOut.println("West Gate: "+ westGate);
 
             mHerdManager.setGates(westGate, eastGate);
 
-            mOut.println("\nEast Gate: "+eastGate);
-            mOut.println("West Gate: "+westGate + "\n");
+            mOut.println("\nEast Gate: "+ eastGate);
+            mOut.println("West Gate: "+ westGate + "\n");
 
             mHerdManager.simulateHerd(westGate, eastGate, new Random(1234));
             break;
