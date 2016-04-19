@@ -273,6 +273,7 @@ public class AllUnitTests {
         Gate 3: This gate is not locked and swings to exit the pen only.
         */
 
+        Random rand = new Random(seed);
         for (int i = 0; i < SIZE; ++i) {
             assertFalse(corral[i].isLocked());
         }
