@@ -56,12 +56,13 @@ public class FillTheCorral {
      * @param rand {@link Random} random value to set and select the swing value of the gate.
      */
     public void setCorralGates(Gate[] corral, Random rand) {
-        for(Gate g : corral) {
+        for(int i =0; i < corral.length; i++) {
             if(rand.nextBoolean()) {
-                g.open(Gate.IN);
+                corral[i].open(Gate.IN);
             } else {
-                g.open(Gate.OUT);
+                corral[i].open(Gate.OUT);
             }
+            printGateStatus(corral[i], i);
         }
     }
 
@@ -89,7 +90,7 @@ public class FillTheCorral {
     }
 
     private void printGateStatus(Gate gate, int number) {
-
+        System.out.println("Gate " + number + ": " + gate.toString());
     }
     
 }
