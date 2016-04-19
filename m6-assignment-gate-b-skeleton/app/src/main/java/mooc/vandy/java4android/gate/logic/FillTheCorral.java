@@ -17,6 +17,8 @@ public class FillTheCorral {
      */
     private OutputInterface mOut;
 
+    private int maxAttempt = 300;
+
     /**
      * Constructor initializes the field.
      */
@@ -85,10 +87,11 @@ public class FillTheCorral {
     public void corralSnails(Gate[] corral, Random rand) {
         //Initial value of the snails out to pasture.
         int snailOutToPasture = 5;
+        int attempt = 0;
 
         //Indefinite loop to loops until snailOutToPasture gets to zero
-        while(snailOutToPasture > 0) {
-
+        while(snailOutToPasture > 0 || attempt != maxAttempt) {
+            attempt += 1;
             //determines gate number.
             int gateNumber = new Random().nextInt(4) + 1;
             Gate gate = corral[gateNumber];
@@ -104,25 +107,26 @@ public class FillTheCorral {
             //prints the snails status
             printSnailStatus(gate, gateNumber, numberOfSnail, snailOutToPasture);
         }
+        mOut.println("It took " + attempt + " attempts to coral all of the snails.");
 
     }
 
     //Print out the status of the gate.
     private void printGateStatus(Gate gate, int number) {
-        System.out.println("Gate " + number + ": " + gate.toString());
+        mOut.println("Gate " + number + ": " + gate.toString());
     }
 
     //prints the status of the snails currently in the pasture and number of snails trying to move.
     private void printSnailStatus(Gate gate, int gateNumber, int numOfSnail, int snailOutToPasture) {
 
         if(gate.isLocked()) {
-            System.out.println(numOfSnail + " snails are trying to move through locked coral " + gateNumber);
+            mOut.println(numOfSnail + " snails are trying to move through locked coral " + gateNumber);
         } else if(gate.getSwingDirection() == Gate.IN) {
-            System.out.println(numOfSnail + "  snails are trying to move through entry coral " + gateNumber);
+            mOut.println(numOfSnail + "  snails are trying to move through entry coral " + gateNumber);
         } else {
-            System.out.println(numOfSnail + " snails are trying to move through exit coral " + gateNumber);
+            mOut.println(numOfSnail + " snails are trying to move through exit coral " + gateNumber);
         }
-        System.out.println("There are currently " + snailOutToPasture + " snails still in the pasture");
+        mOut.println("There are currently " + snailOutToPasture + " snails still in the pasture");
     }
     
 }
