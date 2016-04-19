@@ -18,6 +18,7 @@ public class HerdManager {
      * Reference to the output.
      */
     private OutputInterface mOut;
+    private long seed = 1234;
 
     //The Gates to need to work with the Gate class.
     private Gate westGate; //In to the Herd
@@ -50,14 +51,16 @@ public class HerdManager {
 
         mOut.print(numberOfSnailInPen + " ");
         mOut.print(numberOfSnailInPasture + " ");
-        Gate gate;
+        Gate gate = null;
+        Random rand = new Random(seed);
         for(int i = 0; i < 10; i++) {
 
             if(numberOfSnailInPasture == 0) {
                 gate = eastGate;
             } else {
-                boolean gateSelection = random.nextBoolean();
+                boolean gateSelection = random.nextInt(1) == 1;
                 gate = gateSelection ? eastGate : westGate;
+
             }
 
             if(gate.getSwingDirection() == Gate.IN) {
