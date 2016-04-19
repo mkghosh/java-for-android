@@ -18,7 +18,6 @@ public class HerdManager {
      * Reference to the output.
      */
     private OutputInterface mOut;
-    private long seed = 1234;
 
     //The Gates to need to work with the Gate class.
     private Gate westGate; //In to the Herd
@@ -43,8 +42,8 @@ public class HerdManager {
     public void setGates(Gate westGate, Gate eastGate) {
 
         //seting the gates swing values
-        westGate.setSwing(Gate.IN);
-        eastGate.setSwing(Gate.OUT);
+        westGate.open(Gate.IN);
+        eastGate.open(Gate.OUT);
 
         //seting the gates to the instance variables
         this.westGate = westGate;
@@ -79,6 +78,8 @@ public class HerdManager {
             //setting the gate's value to the desired gate
             if(inPasture == 0) {
                 gate = eastGate;
+            } else if(inPen == 0) {
+                gate = westGate;
             } else {
                 gate = random.nextBoolean() ? eastGate : westGate;
             }
