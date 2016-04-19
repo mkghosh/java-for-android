@@ -27,13 +27,15 @@ public class FillTheCorral {
     }
 
     public boolean anyCorralAvailable(Gate[] corral) {
+        for (Gate gate : corral) {
+            if(!gate.isLocked() && gate.getSwingDirection() == Gate.IN)
+                return true;
+        }
         return false;
     }
 
     public void corralSnails(Gate[] corral, Random rand) {
 
     }
-
-    // TODO -- Fill your code in here
     
 }
