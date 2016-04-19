@@ -112,9 +112,17 @@ public class FillTheCorral {
         System.out.println("Gate " + number + ": " + gate.toString());
     }
 
+    //prints the status of the snails currently in the pasture and number of snails trying to move.
     private void printSnailStatus(Gate gate, int gateNumber, int numOfSnail, int snailOutToPasture) {
-        //5 snails are trying to move through locked coral 2.
-//        There are currently 5 snails still in the pasture.
+
+        if(gate.isLocked()) {
+            System.out.println(numOfSnail + " snails are trying to move through locked coral " + gateNumber);
+        } else if(gate.getSwingDirection() == Gate.IN) {
+            System.out.println(numOfSnail + "  snails are trying to move through entry coral " + gateNumber);
+        } else {
+            System.out.println(numOfSnail + " snails are trying to move through exit coral " + gateNumber);
+        }
+        System.out.println("There are currently " + snailOutToPasture + " snails still in the pasture");
     }
     
 }
