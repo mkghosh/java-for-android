@@ -14,6 +14,7 @@ public class Office
 
     public Office(int	length,	int	width,	int	lotLength,	int	lotWidth) {
         super(length,width,lotLength,lotWidth);
+        totalOffices++;
     }
 
     public Office(int	length,	int	width,	int	lotLength,	int	lotWidth,	String	businessName) {
@@ -53,12 +54,19 @@ public class Office
 
     @Override
     public String toString() {
-        return super.toString();
+        StringBuilder sb = new StringBuilder("Business: ");
+        if(getBusinessName() != null) {
+            sb.append(getBusinessName() + " (total offices: " + getTotalOffices() + ")");
+        } else {
+            sb.append("unoccupied (total offices: " + getTotalOffices() + ")");
+        }
+
+        return sb.toString();
     }
 
     @Override
     public boolean equals(Object officeObject) {
         Office otherOffice = (Office) officeObject;
-        return (this.getParkingSpaces() == otherOffice.getParkingSpaces()) && super.equals(otherOffice);
+        return (getParkingSpaces() == otherOffice.getParkingSpaces()) && super.equals(otherOffice);
     }
 }
