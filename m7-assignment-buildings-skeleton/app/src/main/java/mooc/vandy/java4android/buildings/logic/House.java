@@ -14,9 +14,12 @@ public class House extends Building {
 
     public House(int	length,	int	width,	int	lotLength,	int	lotWidth,	String	owner) {
         this(length,width,lotLength,lotWidth);
+        this.owner = owner;
     }
+
     public House(int	length,	int	width,	int	lotLength,	int	lotWidth,	String	owner, boolean pool) {
-        this(length,width,lotLength,lotWidth);
+        this(length,width,lotLength,lotWidth,owner);
+        this.pool = pool;
     }
 
     public String getOwner() {
