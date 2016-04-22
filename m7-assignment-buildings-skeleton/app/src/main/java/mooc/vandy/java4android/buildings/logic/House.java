@@ -30,7 +30,7 @@ public class House extends Building {
         this.owner = owner;
     }
 
-    public boolean isPool() {
+    public boolean hasPool() {
         return pool;
     }
 
