@@ -101,6 +101,11 @@ public class Office
         Office.totalOffices = totalOffices;
     }
 
+    /**
+     * <h1>Overriden toString method to show the status of the {@link Office}</h1>
+     *
+     * @return {@link String} representation of {@link Office}.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Business: ");
@@ -113,9 +118,18 @@ public class Office
         return sb.toString();
     }
 
+    /**
+     * <h1>Overriden equals method to check the equality of two {@link Office}</h1>
+     *
+     * @param officeObject {@link Object} Office objects can be checked whether it is equals or not.
+     * @return {@link Boolean} true if equals or false.
+     */
     @Override
     public boolean equals(Object officeObject) {
-        Office otherOffice = (Office) officeObject;
-        return (getParkingSpaces() == otherOffice.getParkingSpaces()) && super.equals(otherOffice);
+        if (Office.class.isInstance(officeObject)) {
+            Office otherOffice = (Office) officeObject;
+            return (parkingSpaces == otherOffice.parkingSpaces) && super.equals(otherOffice);
+        }
+        return false;
     }
 }
