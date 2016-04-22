@@ -50,11 +50,11 @@ public class Building {
     }
 
     public int calcBuildingArea() {
-        return 0;
+        return getLength() * getWidth();
     }
 
     public int calcLotArea() {
-        return 0;
+        return getLotLength() * getLotWidth();
     }
 
     @Override

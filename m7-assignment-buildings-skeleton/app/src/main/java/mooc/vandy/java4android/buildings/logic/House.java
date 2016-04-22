@@ -40,7 +40,14 @@ public class House extends Building {
 
     @Override
     public String toString() {
-        return super.toString();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Owner: " + this.getOwner() + "; ");
+        if(this.calcBuildingArea() < this.calcLotArea())
+            sb.append("has a big open space");
+        else
+            sb.append("has no open space at all");
+        return sb.toString();
     }
 
     @Override
