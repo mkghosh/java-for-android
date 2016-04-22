@@ -61,4 +61,10 @@ public class Building {
     public String toString() {
         return super.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Building other = (Building) o;
+        return (this.calcBuildingArea() == other.calcBuildingArea());
+    }
 }
