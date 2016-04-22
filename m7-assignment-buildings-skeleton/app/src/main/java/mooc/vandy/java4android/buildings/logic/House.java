@@ -43,8 +43,8 @@ public class House extends Building {
         return super.toString();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
+    public boolean equals(House anotherHouse) {
+        return ((this.calcBuildingArea() == anotherHouse.calcBuildingArea()) &&
+                (this.hasPool() == anotherHouse.hasPool()));
     }
 }
