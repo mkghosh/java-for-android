@@ -21,7 +21,7 @@ public class Building {
         return length;
     }
 
-    private void setLength(int length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
@@ -29,7 +29,7 @@ public class Building {
         return width;
     }
 
-    private void setWidth(int width) {
+    public void setWidth(int width) {
         this.width = width;
     }
 
@@ -37,7 +37,7 @@ public class Building {
         return lotLength;
     }
 
-    private void setLotLength(int lotLength) {
+    public void setLotLength(int lotLength) {
         this.lotLength = lotLength;
     }
 
@@ -45,7 +45,7 @@ public class Building {
         return lotWidth;
     }
 
-    private void setLotWidth(int lotWidth) {
+    public void setLotWidth(int lotWidth) {
         this.lotWidth = lotWidth;
     }
 
