@@ -8,8 +8,12 @@ public class House extends Building {
     private String owner;
     private boolean pool;
 
-    public House(int	length,	int	width,	int	lotLength,	int	lotWidth,	String	owner) {
+    public House(int length, int width, int lotLength, int lotWidth) {
         super(length, width, lotLength, lotWidth);
+    }
+
+    public House(int	length,	int	width,	int	lotLength,	int	lotWidth,	String	owner) {
+        this(length,width,lotLength,lotWidth);
         this.owner = owner;
     }
 
