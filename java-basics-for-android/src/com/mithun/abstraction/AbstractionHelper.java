@@ -6,8 +6,6 @@ package com.mithun.abstraction;
  */
 public abstract class AbstractionHelper {
 
-
-
     public abstract void execute();
 
 }
