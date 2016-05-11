@@ -27,12 +27,17 @@ public class JavaFXLearn extends Application implements EventHandler<ActionEvent
         btn2 = new Button();
         btn2.setText("Second Button");
 
-        btn1.setOnAction(/*new EventHandler<ActionEvent>() {
+        /*btn1.setOnAction(*//*new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 System.out.print("Button one has clicked");
             }
-        }*/ this);
+        }*//* this);*/
+
+        btn1.setOnAction(event -> {
+            System.out.println("This is the first lambda expression using java8");
+            System.out.println("This is the second lambda expression using java8");
+        });
 
         StackPane layout = new StackPane();
         layout.getChildren().add(0, btn1);
