@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 /**
  * Created by Mithun Kumer Ghose on 5/11/2016.
  */
-public class JavaFXLearn extends Application /*implements EventHandler<ActionEvent>*/ {
+public class JavaFXLearn extends Application implements EventHandler<ActionEvent> {
 
     Button btn1, btn2;
 
@@ -27,12 +27,12 @@ public class JavaFXLearn extends Application /*implements EventHandler<ActionEve
         btn2 = new Button();
         btn2.setText("Second Button");
 
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
+        btn1.setOnAction(/*new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 System.out.print("Button one has clicked");
             }
-        });
+        }*/ this);
 
         StackPane layout = new StackPane();
         layout.getChildren().add(0, btn1);
@@ -45,8 +45,10 @@ public class JavaFXLearn extends Application /*implements EventHandler<ActionEve
 
     }
 
-//    @Override
-//    public void handle(ActionEvent event) {
-//
-//    }
+    @Override
+    public void handle(ActionEvent event) {
+      if(event.getSource() == btn1) {
+          btn1.setText("First Button Clicked");
+      }
+    }
 }
