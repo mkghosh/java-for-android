@@ -2,10 +2,8 @@ package com.mithun;
 
 import com.mithun.abstraction.AbstractClient;
 import com.mithun.abstraction.AbstractionHelper;
-import com.mithun.arrays.MarkProcessor;
-import com.mithun.conditionals.PrintStarArt;
-
-import java.util.Scanner;
+import com.mithun.inheritence.Asian;
+import com.mithun.inheritence.European;
 
 /**
  * @author Mithun Kumer Ghose
@@ -17,6 +15,12 @@ public class Main {
 //        starArt.printAscendingTriangleStarArt(5);
 //        starArt.printDescendingTriangleStarArt(5);
 
+        //Example of Inheritance
+        Asian asian = new Asian("Mithun Kumer Ghose", "Hinduism", 26);
+        European european = new European("Michel Phelps", "Christian", 30);
+
+        System.out.println(asian.toString());
+        System.out.println(european.toString());
         //Starting of Abstraction.
         AbstractClient abstractClient = new AbstractClient();
         abstractClient.execute();

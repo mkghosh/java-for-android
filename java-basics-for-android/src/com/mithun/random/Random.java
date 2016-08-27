@@ -7,6 +7,7 @@ public class Random {
 
     private int max;
     private int last;
+
     // constructor that takes the max int
     public Random(int max){
         this.max = max;
