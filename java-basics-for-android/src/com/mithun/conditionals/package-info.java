@@ -1,4 +1,4 @@
 /**
- * Created by Mithun Kumer Ghose on 4/11/2016.
+ * @author Mithun Kumer Ghose.
  */
 package com.mithun.conditionals;

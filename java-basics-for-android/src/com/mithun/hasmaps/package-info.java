@@ -1,4 +1,4 @@
 /**
  * @author Mithun Kumer Ghose.
  */
-package com.mithun.polymorphism;
+package com.mithun.hasmaps;

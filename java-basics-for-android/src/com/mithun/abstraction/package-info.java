@@ -1,4 +1,4 @@
 /**
- * Created by Mithun Kumer Ghose on 4/6/2016.
+ * @author Mithun Kumer Ghose.
  */
 package com.mithun.abstraction;

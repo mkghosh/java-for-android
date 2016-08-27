@@ -10,6 +10,8 @@ import com.mithun.inheritence.European;
  */
 
 public class Main {
+
+
     public static void main(String[] args) {
 //        PrintStarArt starArt = new PrintStarArt();
 //        starArt.printAscendingTriangleStarArt(5);
