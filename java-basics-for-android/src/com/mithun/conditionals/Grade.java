@@ -1,8 +1,11 @@
 package com.mithun.conditionals;
 
 /**
+ * @author Mithun Kumer Ghose
+ */
+
+/**
  * <h1>This Class is responsible for calculating students grade bye providing the obtained mark.</h1>
- * Created by Mithun Kumer Ghose on 4/10/2016.
  */
 public class Grade {
 

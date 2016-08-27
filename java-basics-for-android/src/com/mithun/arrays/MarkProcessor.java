@@ -1,8 +1,11 @@
 package com.mithun.arrays;
 
 /**
+ * @author Mithun Kumer Ghose
+ */
+
+/**
  * <h1>This class will process the given number of students mark.</h1>
- * Created by Mithun Kumer Ghose on 4/12/2016.
  */
 public class MarkProcessor {
 

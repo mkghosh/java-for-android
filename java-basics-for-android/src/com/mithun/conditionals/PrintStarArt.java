@@ -1,8 +1,11 @@
 package com.mithun.conditionals;
 
 /**
+ * @author Mithun Kumer Ghose
+ */
+
+/**
  * <h1>This class contains some art work created using asterisks only</h1>
- * Created by Mithun Kumer Ghose on 4/10/2016.
  * <p>
  * For size 1 the triangle will be looking like
  * +---+

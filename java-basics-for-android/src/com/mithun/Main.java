@@ -7,6 +7,10 @@ import com.mithun.conditionals.PrintStarArt;
 
 import java.util.Scanner;
 
+/**
+ * @author Mithun Kumer Ghose
+ */
+
 public class Main {
     public static void main(String[] args) {
 //        PrintStarArt starArt = new PrintStarArt();

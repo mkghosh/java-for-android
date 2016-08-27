@@ -1,7 +1,7 @@
 package com.mithun.random;
 
 /**
- * Created by Mithun Kumer Ghose on 4/12/2016.
+ * @author Mithun Kumer Ghose
  */
 public class Random {
 
