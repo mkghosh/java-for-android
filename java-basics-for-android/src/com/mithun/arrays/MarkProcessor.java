@@ -43,6 +43,12 @@ public class MarkProcessor {
         int[] intMarkArray = getIntArray(markString);
 
         double average = getAverageMark(markString);
+
+        for(int mark : intMarkArray) {
+            if(mark < average) {
+                System.out.println("Mark " + mark + " is lower than average " + average);
+            }
+        }
         
     }
 }
