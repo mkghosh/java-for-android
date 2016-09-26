@@ -4,6 +4,8 @@ package com.mithun.inheritence;
  * @author Mithun Kumer Ghose
  */
 public class Person {
+
+    //These variables should only be used and be accessible from the child class.
     protected String name;
     protected String ethnicity;
     protected String religion;
