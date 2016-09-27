@@ -29,7 +29,7 @@ are easier then that of processes.
 </p>
 
 **How many types of threads are there in java?**
-<p>
+<br/>
 There are two types of thread in java. 
  <br/><em>
  1) User Thread and <br/>
@@ -46,7 +46,6 @@ are created for serving the user threads. As soon as all the user threads stoppe
 or dead the daemon threads will also be vanished or killed by the JVM because as 
 there is no user thread is alive so what is the point to keep a helper thread 
 which has been created only to help those user threads?
- </p>
  </p>
  
 **How to create a thread?**
