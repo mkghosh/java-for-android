@@ -29,7 +29,7 @@ are easier then that of processes.
 </p>
 
 **How many types of threads are there in java?**
-<br/>
+<p>
 There are two types of thread in java. 
  <br/><em>
  1) User Thread and <br/>
