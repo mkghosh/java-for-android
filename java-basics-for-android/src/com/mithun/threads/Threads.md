@@ -2,14 +2,12 @@
 ===========================
 **Threads :** 
 <p>
-Threads are concurrency management system in 
-java. Java is very effecient to manage concurrency via 
-threading mechanism. Java is a multithreaded programming 
+Threads are concurrency management system in java. Java is very 
+effecient to manage concurrency via threading mechanism. Java is a multithreaded programming 
 language. For multitasking and concurrency thread is required.
 Without thread multitasking is really hard to implement.
 In real world although multitasking is not possible but task
-switching. By using threads we can implement task switching 
-very effeciently.
+switching. By using threads we can implement task switching very effeciently.
 </p>
 
 **What is the reason to use a Thread ?** 
@@ -38,11 +36,11 @@ There are two types of thread in java.
  2) Daemon Thread
  </em>
 <p>
-*1) User Thread :* The threads created by the application is called user thread.
+<b>1) User Thread :</b> The threads created by the application is called user thread.
  User threads are the master thread in java. The main thread is also a user 
  thread. 
 <br/><br/><br/>
-*2) Daemon Thread :* The threads created by JVM for some house keeping task is
+<b>2) Daemon Thread :</b> The threads created by JVM for some house keeping task is
 called Daemon thread. Daemon threads are slave threads. These types of threads 
 are created for serving the user threads. As soon as all the user threads stopped
 or dead the daemon threads will also be vanished or killed by the JVM because as 
