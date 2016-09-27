@@ -38,8 +38,6 @@ There are two types of thread in java.
  2) Daemon Thread
  </em>
 </p>
-
-<br/><br/><br/>
 <p>
 *1) User Thread :* The threads created by the application is called user thread.
  User threads are the master thread in java. The main thread is also a user 
@@ -52,5 +50,6 @@ or dead the daemon threads will also be vanished or killed by the JVM because as
 there is no user thread is alive so what is the point to keep a helper thread 
 which has been created only to help those user threads?
  </p>
+ 
 **How to create a thread?**
 <p>There are two</p>
