@@ -2,6 +2,7 @@ package com.mithun;
 
 import com.mithun.abstraction.AbstractClient;
 import com.mithun.abstraction.AbstractionHelper;
+import com.mithun.conditionals.PrintStarArt;
 import com.mithun.inheritence.Asian;
 import com.mithun.inheritence.European;
 
@@ -13,9 +14,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-//        PrintStarArt starArt = new PrintStarArt();
-//        starArt.printAscendingTriangleStarArt(5);
-//        starArt.printDescendingTriangleStarArt(5);
+        PrintStarArt starArt = new PrintStarArt();
+        starArt.printAscendingTriangleStarArt(5);
+        starArt.printDescendingTriangleStarArt(5);
 
         //Example of Inheritance
         Asian asian = new Asian("Mithun Kumer Ghose", "Hinduism", 26);
