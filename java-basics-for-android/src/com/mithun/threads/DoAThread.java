@@ -6,8 +6,16 @@ package com.mithun.threads;
 public class DoAThread extends Thread {
 
     public static void main(String[] args) {
-        MyThread mt = new MyThread();
-        mt.start();
+        Thread thread = new SleepThread("My Sleeper demo");
+        try {
+            Thread.sleep(100);
+            System.out.println(thread.getName());
+            System.out.println(thread.isAlive());
+            System.out.println(thread.isDaemon());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         for(int i = 0; i < 2000; i++) {
             System.out.println("main(): " + i);
         }
