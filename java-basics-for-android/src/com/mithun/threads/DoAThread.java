@@ -30,5 +30,4 @@ public class DoAThread extends Thread {
 //        }
 //    }
 
-
 }
