@@ -25,7 +25,6 @@
     On the other hand you can use the same data structure or same 
     resources from multiple threads. The communication between threads
     are easier then that of processes.
-</p>
 
 **How many types of threads are there in java?**
 <p>
@@ -56,3 +55,4 @@
     automatically which is not the intention of the developer. But in the second way developer
     has the choice to extend another class and here only one method is available and will reduce
     memory consumption.
+    
