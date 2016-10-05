@@ -6,11 +6,6 @@ package com.mithun.inheritence;
 public abstract class Vehicle {
 
     /**
-     * <p>This properties will calculate all the distance travelled yet by the vehicle.</p>
-     */
-    public static double distanceTravelled = 0.0;
-
-    /**
      * <p>Starts the vehicle.</p>
      */
     public abstract void start();
