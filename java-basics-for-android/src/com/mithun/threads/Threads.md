@@ -7,8 +7,7 @@
     language. For multitasking and concurrency thread is required.
     Without thread multitasking is really hard to implement.
     In real world although multitasking is not possible but task
-    switching. By using threads we can implement task switching very effeciently.
-</p>
+    switching. By using threads we can implement task switching very efficiently.
 
 **What is the reason to use a Thread ?** 
 <p>
@@ -45,8 +44,6 @@
         or dead the daemon threads will also be vanished or killed by the JVM because as 
         there is no user thread is alive so what is the point to keep a helper thread 
         which has been created only to help those user threads?
-    </p>
- </p>
 
 **How to create a thread?**
 <p>
@@ -59,4 +56,3 @@
     automatically which is not the intention of the developer. But in the second way developer
     has the choice to extend another class and here only one method is available and will reduce
     memory consumption.
-</p>

@@ -1,7 +1,7 @@
 package com.mithun.threads;
 
 /**
- * Created by Mithun Kumer Ghose on 10/1/2016.
+ * @author Mithun Kumer Ghose.
  */
 public class SleepThread extends Thread {
 

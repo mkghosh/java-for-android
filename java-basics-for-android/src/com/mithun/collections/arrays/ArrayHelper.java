@@ -1,4 +1,4 @@
-package com.mithun.arrays;
+package com.mithun.collections.arrays;
 
 /**
  * @author Mithun Kumer Ghose

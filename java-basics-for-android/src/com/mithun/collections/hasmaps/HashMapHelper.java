@@ -1,4 +1,4 @@
-package com.mithun.hasmaps;
+package com.mithun.collections.hasmaps;
 
 /**
  * @author Mithun Kumer Ghose

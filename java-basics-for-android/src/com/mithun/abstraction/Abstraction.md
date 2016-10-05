@@ -8,6 +8,7 @@ Abstraction
 Namely : 
 <p>
     a\) Data Abstraction &
+    <br>
     b\) Control Abstraction.
 <p>     **Data Abstraction :** Data abstraction means hide the implementation details from the user. Users don't have access
         to the implementation of the classes and don't need to have that. Because user gets an interface of the project 
