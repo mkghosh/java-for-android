@@ -1,4 +1,4 @@
-package com.mithun.inheritence;
+package com.mithun.inheritence.single_inheritance_demo;
 
 /**
  * @author Mithun Kumer Ghose.

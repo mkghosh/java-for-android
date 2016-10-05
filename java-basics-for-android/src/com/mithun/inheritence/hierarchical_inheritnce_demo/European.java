@@ -1,4 +1,4 @@
-package com.mithun.inheritence;
+package com.mithun.inheritence.hierarchical_inheritnce_demo;
 
 /**
  * @author Mithun Kumer Ghose.
