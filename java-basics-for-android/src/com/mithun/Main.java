@@ -1,7 +1,7 @@
 package com.mithun;
 
-import com.mithun.abstraction.AbstractClient;
-import com.mithun.abstraction.AbstractionHelper;
+import com.mithun.abstraction.abstract_class_abstraction.AbstractClient;
+import com.mithun.abstraction.abstract_class_abstraction.AbstractionHelper;
 import com.mithun.conditionals.PrintStarArt;
 import com.mithun.inheritence.hierarchical_inheritnce_demo.Asian;
 import com.mithun.inheritence.hierarchical_inheritnce_demo.European;

@@ -1,4 +1,4 @@
-package com.mithun.abstraction;
+package com.mithun.abstraction.abstract_class_abstraction;
 
 /**
  * @author Mithun Kumer Ghose
