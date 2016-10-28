@@ -50,9 +50,9 @@ It can be said that if the condition is true then do the first work otherwise do
 There is another type of conditionals in java namely switch. switch can be operated on **Integer type values**, **Enum type values**, **Character type values** and from java version 7 it can also be applied on **String type values.** 
 The ussage of switch is as follows :
 switch(variable) { <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;case **int, enum, char or string :** 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do the work with this case;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**break;**
+&nbsp;&nbsp;&nbsp;&nbsp;case **int, enum, char or string :** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do the work with this case;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>break</b>;<br>
 }
 
 You can take as many case as you want. You can use and special case called **default** by which you can ensure that if any case do not match then this case will be executing.

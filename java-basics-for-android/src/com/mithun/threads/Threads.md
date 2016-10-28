@@ -1,4 +1,4 @@
-*What is Threads in java?*
+*Threads in java*
 ===========================
 **Threads :** 
 <p>
