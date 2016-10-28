@@ -18,4 +18,5 @@ Namely :
         code may be changed later for performance issue or for other reason but user don't need to worry about that he/she 
         knows the upper layer functionality and coder\/programmer can manage the code very efficiently if he/she follows 
         the abstraction rules. 
-<p>     **Control Abstraction :** Control abstraction means 
+<p>     **Control Abstraction :** Control abstraction means the abstraction of actions. Control abstaction involves in the use of
+        subprograms and related concepts control flow.
