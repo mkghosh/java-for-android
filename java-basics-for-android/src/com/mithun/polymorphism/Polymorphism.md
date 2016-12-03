@@ -3,6 +3,8 @@ Polymorphism In Java.
 
 1\) [What is Polymorphism?]()<br>
 2\) [Concept of Polymorphism in java.]()<br>
+3\) [How to work with polymorphism?]()<br>
+4\) [What is the practical usage of polymorphism?]()<br>
 
 ___Definition :___
  <p> The word Ploymorphism is composed of two different words
