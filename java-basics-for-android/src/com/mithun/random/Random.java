@@ -1,7 +1,7 @@
 package com.mithun.random;
 
 /**
- * @author Mithun Kumer Ghose
+ * @author Frank
  */
 public class Random {
 
